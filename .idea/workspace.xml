@@ -4,8 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="96a1b52d-5ab1-4ab7-9b35-bedbdb835a61" name="Changes" comment="01052023 1313">
+    <list default="true" id="96a1b52d-5ab1-4ab7-9b35-bedbdb835a61" name="Changes" comment="01052023 1438">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,7 +58,42 @@
       <option name="project" value="LOCAL" />
       <updated>1682936076313</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="01052023 1313">
+      <created>1682936805326</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1682936805326</updated>
+    </task>
+    <task id="LOCAL-00003" summary="01052023 1329">
+      <created>1682936948058</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1682936948058</updated>
+    </task>
+    <task id="LOCAL-00004" summary="01052023 1330">
+      <created>1682937010708</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1682937010708</updated>
+    </task>
+    <task id="LOCAL-00005" summary="01052023 1407">
+      <created>1682939274461</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1682939274461</updated>
+    </task>
+    <task id="LOCAL-00006" summary="01052023 1438">
+      <created>1682941104747</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1682941104747</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -73,6 +109,10 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="01052023 1313" />
-    <option name="LAST_COMMIT_MESSAGE" value="01052023 1313" />
+    <MESSAGE value="01052023 1329" />
+    <MESSAGE value="01052023 1330" />
+    <MESSAGE value="01052023 1407" />
+    <MESSAGE value="01052023 1438" />
+    <option name="LAST_COMMIT_MESSAGE" value="01052023 1438" />
   </component>
 </project>

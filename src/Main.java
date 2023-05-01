@@ -8,17 +8,16 @@ public class Main {
     public static Random rnd;
 
     public static void battleshipGame() {
-        // testing
-        String str, regex; // used for converting str to int array
+        String input, regex; // used for converting str to int array
         int i, j; // index
 
         System.out.println("Enter the board size");
         // correct format for input: "nXm" n rows and m cols
-        str = scanner.nextLine();
+        input = scanner.nextLine();
 
         regex = "X"; // regex relevant for this input line
         // send string to function to get int array
-        int[] boardSizeIntArray = stringToIntArray(str, regex);
+        int[] boardSizeIntArray = stringToIntArray(input, regex);
 
         int ROWS = boardSizeIntArray[0];
         int COLS = boardSizeIntArray[1];
@@ -35,13 +34,15 @@ public class Main {
         // "n1Xs1... nkXsk"
 
         String[] battleshipSizesArray = battleshipSizes.split(" ");
-        // array of n1Xs1, .., nkXsk
+        // array of ["n1Xs1", ..,"nkXsk"]
 
         String[][] battleshipStringArray = new String[battleshipSizesArray.length][2];
         for (i = 0; i < battleshipStringArray.length; i++) {
             battleshipStringArray[i] = battleshipSizesArray[i].split("X");
         }
-        // string array of [n1][s1], ..., [nk][sk]
+        // string array of ["n1","s1"], ..., ["nk","sk"]
+        // check later if working
+
         int[][] battleshipArray = new int[battleshipStringArray.length][battleshipStringArray[0].length];
         for (i = 0; i < battleshipStringArray.length; i++) {
             for (j = 0; j < battleshipStringArray[0].length; j++) {
@@ -49,15 +50,10 @@ public class Main {
             }
         }
 
-        // declaring for next section
-        int X;
-        int Y;
-        int ORIENTATION;
-        int S;
 
         for (i = 0; i < battleshipArray.length; i++) {
             System.out.println("Enter location and orientation for battleship of size " + battleshipArray[i][1]);
-            str = scanner.nextLine();
+            input = scanner.nextLine();
             // format "x, y, orientation"
             regex = ", ";
             // orientation 0 for horizontal, 1 for vertical
@@ -65,38 +61,43 @@ public class Main {
             // vertical size s from (x,y) to (x+s-1, y)
 
             // send string to function to get int array
-            int[] locationOrientationArray = stringToIntArray(str, regex);
-            X = locationOrientationArray[0];
-            Y = locationOrientationArray[1];
-            ORIENTATION = locationOrientationArray[2];
-            S = battleshipArray[i][1];
+            int[] locationOrientationArray = stringToIntArray(input, regex);
+            int X = locationOrientationArray[0];
+            int Y = locationOrientationArray[1];
+            int ORIENTATION = locationOrientationArray[2];
+            int S = battleshipArray[i][1];
+            boolean overlapTestResult = false;
+            boolean adjacentTestResult = false;
+
+            overlapTestResult = overlapTest(X, Y, ORIENTATION, S, playerGameBoard);
+            adjacentTestResult = adjacentTest(X, Y, ORIENTATION, S, playerGameBoard);
 
             if (ORIENTATION != 0 && ORIENTATION != 1) {
                 System.out.println("Illegal orientation, try again!");
-                str = scanner.nextLine();
+                input = scanner.nextLine();
             } else if (X > ROWS || Y > COLS) {
                 System.out.println("Illegal tile, try again!");
-                str = scanner.nextLine();
+                input = scanner.nextLine();
             } else if (ORIENTATION == 1 && (Y+S-1) > COLS) {
                 System.out.println("Battleship exceeds the boundaries of the board, try again!");
-                str = scanner.nextLine();
+                input = scanner.nextLine();
             } else if (ORIENTATION == 0 && (X+S-1) > ROWS) {
                 System.out.println("Battleship exceeds the boundaries of the board, try again!");
-                str = scanner.nextLine();
-            } else if (overlapTest) {
+                input = scanner.nextLine();
+            } else if (overlapTestResult) {
                 System.out.println("Battleship overlaps another battleship, try again!");
-                str = scanner.nextLine();
-            } else if (adjacentTest) {
+                input = scanner.nextLine();
+            } else if (adjacentTestResult) {
                 System.out.println("Adjacent battleship detected, try again!");
-                str = scanner.nextLine();
+                input = scanner.nextLine();
             }
         }
     }
 
 
     /** Function for conversion of string to int array */
-    public static int[] stringToIntArray(String str, String regex) {
-        String[] stringArray = str.split(regex);
+    public static int[] stringToIntArray(String input, String regex) {
+        String[] stringArray = input.split(regex);
         int[] intArray = new int[stringArray.length];
         for (int i = 0; i < stringArray.length; i++) {
             intArray[i] = Integer.parseInt(stringArray[i]);
@@ -105,26 +106,41 @@ public class Main {
     }
 
 
-    /** Function for checking overlapping battleships while filling board */
-    public static boolean overlapTest() {
-        for
-        return true;
-    }
-
-
-    /** Function for checking adjacent battleships while filling board */
-    public static boolean adjacentTestTest() {
-        return true;
-    }
-
+    /** Function for board building */
     public static String[][] buildGameBoard(String[][] gameBoard) {
         for (int i = 0; i < gameBoard.length; i++) {
             for (int j = 0; j < gameBoard[0].length; j++) {
                 gameBoard[i][j] = "–";
-                }
             }
-        return gameBoard;
         }
+        return gameBoard;
+    }
+
+
+    /** Function for checking overlapping battleships while filling board */
+    public static boolean overlapTest(int X, int Y, int ORIENTATION, int S, String[][] playerGameBoard) {
+        switch (ORIENTATION) {
+            case 0:
+                for (int j = Y; j < Y+S; j++) {
+                    if (playerGameBoard[X][j].equals('#'));
+                    return true;
+                    }
+            case 1:
+                for (int i = X; i < X+S; i++) {
+                    if (playerGameBoard[i][Y].equals('#'));
+                    return true;
+                }
+        }
+
+        return false;
+    }
+
+
+    /** Function for checking adjacent battleships while filling board */
+    public static boolean adjacentTest(int X, int Y, int ORIENTATION, int S, String[][] playerGameBoard) {
+        return true;
+    }
+
 
 
     public static void printGameBoard(String[][] gameBoard) {
