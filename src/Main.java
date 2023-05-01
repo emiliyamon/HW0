@@ -18,10 +18,10 @@ public class Main {
 
         regex = "X"; // regex relevant for this input line
         // send string to function to get int array
-        int[] boardSizeIntArrayArray = stringToIntArray(str, regex);
+        int[] boardSizeIntArray = stringToIntArray(str, regex);
 
-        int ROWS = boardSizeIntArrayArray[0];
-        int COLS = boardSizeIntArrayArray[1];
+        int ROWS = boardSizeIntArray[0];
+        int COLS = boardSizeIntArray[1];
         String[][] gameBoard = new String[ROWS][COLS];
 
         // building boards using function
@@ -57,37 +57,40 @@ public class Main {
 
         for (i = 0; i < battleshipArray.length; i++) {
             System.out.println("Enter location and orientation for battleship of size " + battleshipArray[i][1]);
-            String locationOrientation = scanner.nextLine();
+            str = scanner.nextLine();
             // format "x, y, orientation"
+            regex = ", ";
             // orientation 0 for horizontal, 1 for vertical
             // horizontal size s from (x,y) to (x, y+s-1)
             // vertical size s from (x,y) to (x+s-1, y)
-            X = locationOrientation.charAt(0);
-            Y = locationOrientation.charAt(3);
-            ORIENTATION = locationOrientation.charAt(6);
+
+            // send string to function to get int array
+            int[] locationOrientationArray = stringToIntArray(str, regex);
+            X = locationOrientationArray[0];
+            Y = locationOrientationArray[1];
+            ORIENTATION = locationOrientationArray[2];
             S = battleshipArray[i][1];
 
             if (ORIENTATION != 0 && ORIENTATION != 1) {
                 System.out.println("Illegal orientation, try again!");
-                locationOrientation = scanner.nextLine();
-            } else if (ORIENTATION == 0 && (X+S-1) > ROWS) {
-                System.out.println("Illegal tile, try again!");
-                locationOrientation = scanner.nextLine();
-            } else if (ORIENTATION == 1 && (Y+S-1) > COLS) {
-                System.out.println("Illegal tile, try again!");
-                locationOrientation = scanner.nextLine();
+                str = scanner.nextLine();
             } else if (X > ROWS || Y > COLS) {
+                System.out.println("Illegal tile, try again!");
+                str = scanner.nextLine();
+            } else if (ORIENTATION == 1 && (Y+S-1) > COLS) {
                 System.out.println("Battleship exceeds the boundaries of the board, try again!");
-                locationOrientation = scanner.nextLine();
+                str = scanner.nextLine();
+            } else if (ORIENTATION == 0 && (X+S-1) > ROWS) {
+                System.out.println("Battleship exceeds the boundaries of the board, try again!");
+                str = scanner.nextLine();
             } else if (overlapTest) {
                 System.out.println("Battleship overlaps another battleship, try again!");
-                locationOrientation = scanner.nextLine();
+                str = scanner.nextLine();
             } else if (adjacentTest) {
                 System.out.println("Adjacent battleship detected, try again!");
-                locationOrientation = scanner.nextLine();
+                str = scanner.nextLine();
             }
         }
-
     }
 
 
