@@ -62,38 +62,51 @@ public class Main {
 
             // send string to function to get int array
             int[] locationOrientationArray = stringToIntArray(input, regex);
+
+            // filling player game board
             int X = locationOrientationArray[0];
             int Y = locationOrientationArray[1];
             int ORIENTATION = locationOrientationArray[2];
             int S = battleshipArray[i][1];
-            boolean overlapTestResult = false;
-            boolean adjacentTestResult = false;
+            int AMOUNT = battleshipArray[i][0];
 
-            if (ORIENTATION != 0 && ORIENTATION != 1) {
-                System.out.println("Illegal orientation, try again!");
-                input = scanner.nextLine();
-            } else if (X > ROWS || Y > COLS) {
-                System.out.println("Illegal tile, try again!");
-                input = scanner.nextLine();
-            } else if (ORIENTATION == 1 && (Y+S-1) > COLS) {
-                System.out.println("Battleship exceeds the boundaries of the board, try again!");
-                input = scanner.nextLine();
-            } else if (ORIENTATION == 0 && (X+S-1) > ROWS) {
-                System.out.println("Battleship exceeds the boundaries of the board, try again!");
-                input = scanner.nextLine();
-            }
 
-            overlapTestResult = overlapTest(X, Y, ORIENTATION, S, playerGameBoard);
-            adjacentTestResult = adjacentTest(X, Y, ORIENTATION, S, playerGameBoard);
+            while (AMOUNT > 0) {
+                boolean overlapTestResult = false;
+                boolean adjacentTestResult = false;
 
-            if (overlapTestResult) {
-                System.out.println("Battleship overlaps another battleship, try again!");
-                input = scanner.nextLine();
-            } else if (adjacentTestResult) {
-                System.out.println("Adjacent battleship detected, try again!");
-                input = scanner.nextLine();
+                if (ORIENTATION != 0 && ORIENTATION != 1) {
+                    System.out.println("Illegal orientation, try again!");
+                    input = scanner.nextLine();
+                } else if (X > ROWS || Y > COLS) {
+                    System.out.println("Illegal tile, try again!");
+                    input = scanner.nextLine();
+                } else if (ORIENTATION == 1 && (Y+S-1) > COLS) {
+                    System.out.println("Battleship exceeds the boundaries of the board, try again!");
+                    input = scanner.nextLine();
+                } else if (ORIENTATION == 0 && (X+S-1) > ROWS) {
+                    System.out.println("Battleship exceeds the boundaries of the board, try again!");
+                    input = scanner.nextLine();
+                }
+
+                overlapTestResult = overlapTest(X, Y, ORIENTATION, S, playerGameBoard);
+                adjacentTestResult = adjacentTest(X, Y, ORIENTATION, S, playerGameBoard);
+
+                if (overlapTestResult) {
+                    System.out.println("Battleship overlaps another battleship, try again!");
+                    input = scanner.nextLine();
+                } else if (adjacentTestResult) {
+                    System.out.println("Adjacent battleship detected, try again!");
+                    input = scanner.nextLine();
+                }
+
+                playerGameBoard
+                AMOUNT--;
             }
         }
+
+
+        // end of main battleship game
     }
 
 
@@ -125,13 +138,13 @@ public class Main {
         switch (ORIENTATION) {
             case 0:
                 for (int j = Y; j < Y+S; j++) {
-                    if (playerGameBoard[X][j] == (boatLocation)) {
+                    if (playerGameBoard[X][j] == boatLocation) {
                         return true;
                     }
                 }
             case 1:
                 for (int i = X; i < X+S; i++) {
-                    if (playerGameBoard[i][Y] == (boatLocation)) {
+                    if (playerGameBoard[i][Y] == boatLocation) {
                         return true;
                     }
                 }
@@ -142,46 +155,42 @@ public class Main {
 
     /** Function for checking adjacent battleships while filling board */
     public static boolean adjacentTest(int X, int Y, int ORIENTATION, int S, char[][] playerGameBoard) {
-        // not good needs fixing
 
         char boatLocation = '#';
         switch (ORIENTATION) {
             case 0:
-                if (X-1 > -1) {
-                    for (int j = Y; j < Y+S; j++) {
-                        if (playerGameBoard[X-1][j] == (boatLocation)) {
-                            return true;
-                        }
-                    }
-                }
-                if (X+1 < playerGameBoard.length) {
-                    for (int j = Y; j < Y+S; j++) {
-                        if (playerGameBoard[X+1][j] == (boatLocation)) {
-                            return true;
-                        }
-                    }
-                }
-                if (Y-1 > -1) {
-                    for (int i = X; i < X+S; i++) {
-                        if (playerGameBoard[i][Y-1] == (boatLocation)) {
-                            return true;
-                        }
-                    }
-                }
-                if (Y+1 < playerGameBoard[0].length) {
-                    for (int i = X; i < X+S; i++) {
-                        if (playerGameBoard[i][Y+1] == (boatLocation)) {
+                for (int i = Math.max(0, X - 1); i <= Math.min(playerGameBoard.length - 1, X + 1); i++) {
+                    for (int j = Math.max(0, Y - 1); j <= Math.min(playerGameBoard[0].length - 1, Y + S); j++) {
+                        if (playerGameBoard[i][j] == boatLocation) {
                             return true;
                         }
                     }
                 }
             case 1:
-
+                for (int i = Math.max(0, X - 1); i <= Math.min(playerGameBoard.length - 1, X + S); i++) {
+                    for (int j = Math.max(0, Y - 1); j <= Math.min(playerGameBoard[0].length - 1, Y + 1); j++) {
+                        if (playerGameBoard[i][j] == boatLocation) {
+                            return true;
+                        }
+                    }
+                }
         }
         return false;
     }
 
 
+    /** function for filling the game board */
+    public static char[][] fillGameBoard(char[][] gameBoard, int X, int Y, int ORIENTAION, int S) {
+        for (char[] row : gameBoard) {
+            for (char c : row) {
+                System.out.print(c);
+            }
+            System.out.println();
+        }
+    }
+
+
+    /** function for printing the game board */
     public static void printGameBoard(char[][] gameBoard) {
         for (char[] row : gameBoard) {
             for (char c : row) {
