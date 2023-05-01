@@ -50,7 +50,9 @@ public class Main {
             }
         }
 
+        printGameBoard(playerGameBoard);
 
+        // filling player game board
         for (i = 0; i < battleshipArray.length; i++) {
             System.out.println("Enter location and orientation for battleship of size " + battleshipArray[i][1]);
             input = scanner.nextLine();
@@ -63,13 +65,11 @@ public class Main {
             // send string to function to get int array
             int[] locationOrientationArray = stringToIntArray(input, regex);
 
-            // filling player game board
             int X = locationOrientationArray[0];
             int Y = locationOrientationArray[1];
             int ORIENTATION = locationOrientationArray[2];
             int S = battleshipArray[i][1];
             int AMOUNT = battleshipArray[i][0];
-
 
             while (AMOUNT > 0) {
                 boolean overlapTestResult = false;
@@ -100,7 +100,8 @@ public class Main {
                     input = scanner.nextLine();
                 }
 
-                playerGameBoard = fillGameBoard(playerGameBoard, X,Y, ORIENTATION, S);
+                fillGameBoard(playerGameBoard, X,Y, ORIENTATION, S);
+                printGameBoard(playerGameBoard);
                 AMOUNT--;
             }
         }
@@ -180,26 +181,24 @@ public class Main {
 
 
     /** function for filling the game board */
-    public static char[][] fillGameBoard(char[][] playerGameBoard, int X, int Y, int ORIENTATION, int S) {
+    public static void fillGameBoard(char[][] playerGameBoard, int X, int Y, int ORIENTATION, int S) {
         char boatLocation = '#';
         switch (ORIENTATION) {
             case 0:
                 for (int j = Y; j <= Y + S - 1; j++) {
                     playerGameBoard[X][j] = boatLocation;
                 }
-                return playerGameBoard;
             case 1:
                 for (int i = X; i <= X + S - 1; i++) {
                     playerGameBoard[i][Y] = boatLocation;
                 }
-                return playerGameBoard;
         }
-        return playerGameBoard;
     }
 
 
     /** function for printing the game board */
     public static void printGameBoard(char[][] gameBoard) {
+        System.out.println("Your current game board:");
         for (char[] row : gameBoard) {
             for (char c : row) {
                 System.out.print(c);
