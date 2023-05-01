@@ -142,6 +142,8 @@ public class Main {
 
     /** Function for checking adjacent battleships while filling board */
     public static boolean adjacentTest(int X, int Y, int ORIENTATION, int S, char[][] playerGameBoard) {
+        // not good needs fixing
+
         char boatLocation = '#';
         switch (ORIENTATION) {
             case 0:
@@ -180,9 +182,9 @@ public class Main {
     }
 
 
-    public static void printGameBoard(String[][] gameBoard) {
-        for (String[] row : gameBoard) {
-            for (String c : row) {
+    public static void printGameBoard(char[][] gameBoard) {
+        for (char[] row : gameBoard) {
+            for (char c : row) {
                 System.out.print(c);
             }
             System.out.println();
