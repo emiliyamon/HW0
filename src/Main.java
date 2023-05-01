@@ -100,7 +100,7 @@ public class Main {
                     input = scanner.nextLine();
                 }
 
-                playerGameBoard
+                playerGameBoard = fillGameBoard(playerGameBoard, X,Y, ORIENTATION, S);
                 AMOUNT--;
             }
         }
@@ -180,13 +180,21 @@ public class Main {
 
 
     /** function for filling the game board */
-    public static char[][] fillGameBoard(char[][] gameBoard, int X, int Y, int ORIENTAION, int S) {
-        for (char[] row : gameBoard) {
-            for (char c : row) {
-                System.out.print(c);
-            }
-            System.out.println();
+    public static char[][] fillGameBoard(char[][] playerGameBoard, int X, int Y, int ORIENTATION, int S) {
+        char boatLocation = '#';
+        switch (ORIENTATION) {
+            case 0:
+                for (int j = Y; j <= Y + S - 1; j++) {
+                    playerGameBoard[X][j] = boatLocation;
+                }
+                return playerGameBoard;
+            case 1:
+                for (int i = X; i <= X + S - 1; i++) {
+                    playerGameBoard[i][Y] = boatLocation;
+                }
+                return playerGameBoard;
         }
+        return playerGameBoard;
     }
 
 
