@@ -25,7 +25,6 @@ public class Main {
         String[][] gameBoard = new String[ROWS][COLS];
 
         // building boards using function
-        // test for git
         String[][] playerGameBoard = buildGameBoard(gameBoard);
         String[][] playerGuessBoard = buildGameBoard(gameBoard);
         String[][] computerGameBoard = buildGameBoard(gameBoard);
