@@ -158,6 +158,18 @@ public class Main {
             }
         }
 
+        System.out.println("Your current guessing board:");
+        printGameBoard(playerGuessBoard);
+        System.out.println("Enter a tile to attack");
+        input = scanner.nextLine();
+        regex = ", ";
+        // send string to function to get int array
+        int[] GuessingTileIntArray = stringToIntArray(input, regex);
+
+        if (ORIENTATION != 0 && ORIENTATION != 1) {
+            System.out.println("Illegal tile, try again!");
+            input = scanner.nextLine();
+        }
 
         // end of main battleship game
     }
@@ -204,7 +216,6 @@ public class Main {
         }
         return false;
     }
-
 
     /** Function for checking adjacent battleships while filling board */
     public static boolean adjacentTest(int X, int Y, int ORIENTATION, int S, char[][] playerGameBoard) {
