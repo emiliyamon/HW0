@@ -163,12 +163,22 @@ public class Main {
         System.out.println("Enter a tile to attack");
         input = scanner.nextLine();
         regex = ", ";
+        String[] inputC = input.split(regex);
+        for (int h = 0; h < inputC.length; h++) {
+            for (int k = 0; k < inputC[h].length(); k++){
+                if inputC[h][k]
+            }
+        }
         // send string to function to get int array
         int[] GuessingTileIntArray = stringToIntArray(input, regex);
+        while (GuessingTileIntArray[0])
+            if (GuessingTileIntArray[0] > ROWS || GuessingTileIntArray[1] > COLS) {
+                System.out.println("Illegal tile, try again!");
+                input = scanner.nextLine();
+            if (playerGuessBoard[GuessingTileIntArray[0]][GuessingTileIntArray[1]] != '–') {
+                System.out.println("Tile already attacked, try again!");
 
-        if (ORIENTATION != 0 && ORIENTATION != 1) {
-            System.out.println("Illegal tile, try again!");
-            input = scanner.nextLine();
+        }
         }
 
         // end of main battleship game
