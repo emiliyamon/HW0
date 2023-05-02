@@ -163,12 +163,13 @@ public class Main {
         printGameBoard(playerGuessBoard);
         System.out.println("Enter a tile to attack");
         input = scanner.nextLine();
+        int[] guessingTileIntArray = new int[3];
 
         boolean flag = true;
 
         while (flag) {
             // send string to function to get int array
-            int[] guessingTileIntArray = stringToIntArray(input, ", ");
+            guessingTileIntArray = stringToIntArray(input, ", ");
             // checking the input
             if (guessingTileIntArray[0] > ROWS || guessingTileIntArray[1] > COLS) {
                 System.out.println("Illegal tile, try again!");
@@ -177,7 +178,7 @@ public class Main {
                 System.out.println("Tile already attacked, try again!");
                 input = scanner.nextLine();
             } else {
-                flag = true;
+                flag = false;
             }
         }
 
