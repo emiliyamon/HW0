@@ -59,11 +59,14 @@ public class Main {
         for (i = 0; i < battleshipArray.length; i++) {
             numOfBoats = numOfBoats + battleshipArray[i][0];
         }
-        int[] boatArray = new int[numOfBoats];
+        int[] playerBoatArray = new int[numOfBoats];
+        int[] computerBoatArray = new int[numOfBoats];
+
 
         printGameBoard(playerGameBoard);
 
         int X, Y,ORIENTATION, S, AMOUNT;
+        int count = 0;
         int[] locationOrientationArray = new int[3];
 
         // filling player game board
@@ -121,6 +124,7 @@ public class Main {
                 }
 
                 fillGameBoard(playerGameBoard, X,Y, ORIENTATION, S);
+                fillBoatBoard(playerBoatBoard, X,Y, ORIENTATION, S, playerBoatArray, count);
                 printGameBoard(playerGameBoard);
                 AMOUNT--;
             }
@@ -259,7 +263,7 @@ public class Main {
     public static int[][] buildBoatBoard(int[][] boatBoard) {
         for (int i = 0; i < boatBoard.length; i++) {
             for (int j = 0; j < boatBoard[0].length; j++) {
-                boatBoard[i][j] = 1;
+                boatBoard[i][j] = 0;
             }
         }
         return boatBoard;
@@ -329,8 +333,8 @@ public class Main {
 
 
     /** function for keeping track of battleships */
-    public static void fillBoatBoard(int[][] boatBoard, int X, int Y, int ORIENTATION, int S, int[] boatArray) {
-        char boatLocation = 0;
+    public static void fillBoatBoard(int[][] boatBoard, int X, int Y, int ORIENTATION, int S, int[] boatArray, int count) {
+        char boatLocation = 1;
         switch (ORIENTATION) {
             case 0:
                 for (int j = Y; j <= Y + S - 1; j++) {
@@ -341,8 +345,8 @@ public class Main {
                     boatBoard[i][Y] = boatLocation;
                 }
         }
+        boatArray[count] = S;
     }
-
 
 
     /** function for printing the game board */
@@ -386,7 +390,7 @@ public class Main {
 
 
     /** function for checking if ship is sunk */
-    public static boolean isSunk(char[][] gameboard, int ROW, int COl) {
+    public static boolean isSunk(char[][] gameboard, int ROW, int COL) {
         return false;
     }
 
