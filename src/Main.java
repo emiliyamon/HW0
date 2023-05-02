@@ -23,12 +23,15 @@ public class Main {
         int ROWS = boardSizeIntArray[0];
         int COLS = boardSizeIntArray[1];
         char[][] gameBoard = new char[ROWS][COLS];
+        int[][] boatBoard = new int[ROWS][COLS]; // for keeping track of boats
 
         // building boards using function
         char[][] playerGameBoard = buildGameBoard(gameBoard);
         char[][] playerGuessBoard = buildGameBoard(gameBoard);
         char[][] computerGameBoard = buildGameBoard(gameBoard);
         char[][] computerGuessBoard = buildGameBoard(gameBoard);
+        int[][] playerBoatBoard = buildBoatBoard(boatBoard);
+        int[][] computerBoatBoard = buildBoatBoard(boatBoard);
 
         System.out.println("Enter battleship sizes");
         String battleshipSizes = scanner.nextLine();
@@ -50,6 +53,13 @@ public class Main {
                 battleshipArray[i][j] = Integer.parseInt(battleshipStringArray[i][j]);
             }
         }
+
+        // for keeping track of boats
+        int numOfBoats = 0;
+        for (i = 0; i < battleshipArray.length; i++) {
+            numOfBoats = numOfBoats + battleshipArray[i][0];
+        }
+        int[] boatArray = new int[numOfBoats];
 
         printGameBoard(playerGameBoard);
 
@@ -161,6 +171,7 @@ public class Main {
                 }
 
                 fillGameBoard(computerGameBoard, X,Y, ORIENTATION, S);
+                fillGameBoard(computerGameBoard, X,Y, ORIENTATION, S);
                 AMOUNT--;
             }
         }
@@ -192,10 +203,12 @@ public class Main {
         if (computerGameBoard[guessingTileIntArray[0]][guessingTileIntArray[1]] == '–') {
             System.out.println("That is a miss!");
             playerGuessBoard[guessingTileIntArray[0]][guessingTileIntArray[1]] = 'X';
+            computerGameBoard[guessingTileIntArray[0]][guessingTileIntArray[1]] = 'X';
         }
         if (computerGameBoard[guessingTileIntArray[0]][guessingTileIntArray[1]] == '#') {
             System.out.println("That is a hit!");
             playerGuessBoard[guessingTileIntArray[0]][guessingTileIntArray[1]] = 'V';
+            computerGameBoard[guessingTileIntArray[0]][guessingTileIntArray[1]] = 'V';
         }
 
 
@@ -231,7 +244,7 @@ public class Main {
     }
 
 
-    /** Function for board building */
+    /** Function for game and guess board building */
     public static char[][] buildGameBoard(char[][] gameBoard) {
         for (int i = 0; i < gameBoard.length; i++) {
             for (int j = 0; j < gameBoard[0].length; j++) {
@@ -239,6 +252,17 @@ public class Main {
             }
         }
         return gameBoard;
+    }
+
+
+    /** Function for keeping track board building */
+    public static int[][] buildBoatBoard(int[][] boatBoard) {
+        for (int i = 0; i < boatBoard.length; i++) {
+            for (int j = 0; j < boatBoard[0].length; j++) {
+                boatBoard[i][j] = 1;
+            }
+        }
+        return boatBoard;
     }
 
 
@@ -304,6 +328,23 @@ public class Main {
     }
 
 
+    /** function for keeping track of battleships */
+    public static void fillBoatBoard(int[][] boatBoard, int X, int Y, int ORIENTATION, int S, int[] boatArray) {
+        char boatLocation = 0;
+        switch (ORIENTATION) {
+            case 0:
+                for (int j = Y; j <= Y + S - 1; j++) {
+                    boatBoard[X][j] = boatLocation;
+                }
+            case 1:
+                for (int i = X; i <= X + S - 1; i++) {
+                    boatBoard[i][Y] = boatLocation;
+                }
+        }
+    }
+
+
+
     /** function for printing the game board */
     public static void printGameBoard(char[][] gameBoard) {
         System.out.println("Your current game board:");
@@ -341,6 +382,12 @@ public class Main {
             System.out.println();
         }
 
+    }
+
+
+    /** function for checking if ship is sunk */
+    public static boolean isSunk(char[][] gameboard, int ROW, int COl) {
+        return false;
     }
 
 
