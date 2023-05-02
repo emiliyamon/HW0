@@ -8,8 +8,7 @@ public class Main {
     public static Random rnd;
 
     public static void battleshipGame() {
-        // happy birthday shaked!!!
-        //hello
+
         String input, regex; // used for converting str to int array
         int i, j; // index
 
@@ -55,6 +54,8 @@ public class Main {
         printGameBoard(playerGameBoard);
 
         // filling player game board
+        int X, Y,ORIENTATION, S, AMOUNT;
+
         for (i = 0; i < battleshipArray.length; i++) {
             System.out.println("Enter location and orientation for battleship of size " + battleshipArray[i][1]);
             input = scanner.nextLine();
@@ -67,11 +68,11 @@ public class Main {
             // send string to function to get int array
             int[] locationOrientationArray = stringToIntArray(input, regex);
 
-            int X = locationOrientationArray[0];
-            int Y = locationOrientationArray[1];
-            int ORIENTATION = locationOrientationArray[2];
-            int S = battleshipArray[i][1];
-            int AMOUNT = battleshipArray[i][0];
+            X = locationOrientationArray[0];
+            Y = locationOrientationArray[1];
+            ORIENTATION = locationOrientationArray[2];
+            S = battleshipArray[i][1];
+            AMOUNT = battleshipArray[i][0];
 
             while (AMOUNT > 0) {
                 boolean overlapTestResult = false;
