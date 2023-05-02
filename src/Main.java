@@ -158,27 +158,27 @@ public class Main {
             }
         }
 
+       // attacking - player round
         System.out.println("Your current guessing board:");
         printGameBoard(playerGuessBoard);
         System.out.println("Enter a tile to attack");
         input = scanner.nextLine();
-        regex = ", ";
-        String[] inputC = input.split(regex);
-        for (int h = 0; h < inputC.length; h++) {
-            for (int k = 0; k < inputC[h].length(); k++){
-                if inputC[h][k]
-            }
-        }
-        // send string to function to get int array
-        int[] GuessingTileIntArray = stringToIntArray(input, regex);
-        while (GuessingTileIntArray[0])
-            if (GuessingTileIntArray[0] > ROWS || GuessingTileIntArray[1] > COLS) {
+
+        boolean flag = true;
+
+        while (flag) {
+            // send string to function to get int array
+            int[] guessingTileIntArray = stringToIntArray(input, ", ");
+            // checking the input
+            if (guessingTileIntArray[0] > ROWS || guessingTileIntArray[1] > COLS) {
                 System.out.println("Illegal tile, try again!");
                 input = scanner.nextLine();
-            if (playerGuessBoard[GuessingTileIntArray[0]][GuessingTileIntArray[1]] != '–') {
+            } else if (playerGuessBoard[guessingTileIntArray[0]][guessingTileIntArray[1]] != '–') {
                 System.out.println("Tile already attacked, try again!");
-
-        }
+                input = scanner.nextLine();
+            } else {
+                flag = true;
+            }
         }
 
         // end of main battleship game
