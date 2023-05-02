@@ -188,6 +188,7 @@ public class Main {
                 flag = false;
             }
         }
+
         if (computerGameBoard[guessingTileIntArray[0]][guessingTileIntArray[1]] == '–') {
             System.out.println("That is a miss!");
             playerGuessBoard[guessingTileIntArray[0]][guessingTileIntArray[1]] = 'X';
@@ -196,7 +197,7 @@ public class Main {
             System.out.println("That is a hit!");
             playerGuessBoard[guessingTileIntArray[0]][guessingTileIntArray[1]] = 'V';
         }
-        }
+
 
         // attacking - computer round
         X = rnd.nextInt(ROWS);
@@ -209,9 +210,11 @@ public class Main {
                 Y = rnd.nextInt(COLS);
             } else {
                 flag = false;
-
+                System.out.println("The computer attacked (" + X + "," + Y + ")");
             }
         }
+
+        printGameBoard(playerGameBoard);
 
 
         // end of main battleship game
