@@ -53,14 +53,65 @@ public class Main {
 
         printGameBoard(playerGameBoard);
 
-        // filling player game board
         int X, Y,ORIENTATION, S, AMOUNT;
 
+        // filling player game board
         for (i = 0; i < battleshipArray.length; i++) {
             System.out.println("Enter location and orientation for battleship of size " + battleshipArray[i][1]);
             input = scanner.nextLine();
             // format "x, y, orientation"
             regex = ", ";
+            // orientation 0 for horizontal, 1 for vertical
+            // horizontal size s from (x,y) to (x, y+s-1)
+            // vertical size s from (x,y) to (x+s-1, y)
+
+            // send string to function to get int array
+            int[] locationOrientationArray = stringToIntArray(input, regex);
+
+            X = locationOrientationArray[0];
+            Y = locationOrientationArray[1];
+            ORIENTATION = locationOrientationArray[2];
+            S = battleshipArray[i][1];
+            AMOUNT = battleshipArray[i][0];
+
+            while (AMOUNT > 0) {
+                boolean overlapTestResult = false;
+                boolean adjacentTestResult = false;
+
+                if (ORIENTATION != 0 && ORIENTATION != 1) {
+                    System.out.println("Illegal orientation, try again!");
+                    input = scanner.nextLine();
+                } else if (X > ROWS || Y > COLS) {
+                    System.out.println("Illegal tile, try again!");
+                    input = scanner.nextLine();
+                } else if (ORIENTATION == 1 && (Y+S-1) > COLS) {
+                    System.out.println("Battleship exceeds the boundaries of the board, try again!");
+                    input = scanner.nextLine();
+                } else if (ORIENTATION == 0 && (X+S-1) > ROWS) {
+                    System.out.println("Battleship exceeds the boundaries of the board, try again!");
+                    input = scanner.nextLine();
+                }
+
+                overlapTestResult = overlapTest(X, Y, ORIENTATION, S, playerGameBoard);
+                adjacentTestResult = adjacentTest(X, Y, ORIENTATION, S, playerGameBoard);
+
+                if (overlapTestResult) {
+                    System.out.println("Battleship overlaps another battleship, try again!");
+                    input = scanner.nextLine();
+                } else if (adjacentTestResult) {
+                    System.out.println("Adjacent battleship detected, try again!");
+                    input = scanner.nextLine();
+                }
+
+                fillGameBoard(playerGameBoard, X,Y, ORIENTATION, S);
+                printGameBoard(playerGameBoard);
+                AMOUNT--;
+            }
+        }
+
+        // filling computer game board
+        for (i = 0; i < battleshipArray.length; i++) {
+            X = rnd.nextInt();
             // orientation 0 for horizontal, 1 for vertical
             // horizontal size s from (x,y) to (x, y+s-1)
             // vertical size s from (x,y) to (x+s-1, y)
