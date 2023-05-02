@@ -82,15 +82,19 @@ public class Main {
                 if (ORIENTATION != 0 && ORIENTATION != 1) {
                     System.out.println("Illegal orientation, try again!");
                     input = scanner.nextLine();
+                    locationOrientationArray = stringToIntArray(input, regex);
                 } else if (X > ROWS || Y > COLS) {
                     System.out.println("Illegal tile, try again!");
                     input = scanner.nextLine();
+                    locationOrientationArray = stringToIntArray(input, regex);
                 } else if (ORIENTATION == 1 && (Y+S-1) > COLS) {
                     System.out.println("Battleship exceeds the boundaries of the board, try again!");
                     input = scanner.nextLine();
+                    locationOrientationArray = stringToIntArray(input, regex);
                 } else if (ORIENTATION == 0 && (X+S-1) > ROWS) {
                     System.out.println("Battleship exceeds the boundaries of the board, try again!");
                     input = scanner.nextLine();
+                    locationOrientationArray = stringToIntArray(input, regex);
                 }
 
                 overlapTestResult = overlapTest(X, Y, ORIENTATION, S, playerGameBoard);
@@ -99,9 +103,11 @@ public class Main {
                 if (overlapTestResult) {
                     System.out.println("Battleship overlaps another battleship, try again!");
                     input = scanner.nextLine();
+                    locationOrientationArray = stringToIntArray(input, regex);
                 } else if (adjacentTestResult) {
                     System.out.println("Adjacent battleship detected, try again!");
                     input = scanner.nextLine();
+                    locationOrientationArray = stringToIntArray(input, regex);
                 }
 
                 fillGameBoard(playerGameBoard, X,Y, ORIENTATION, S);
@@ -163,7 +169,7 @@ public class Main {
         printGameBoard(playerGuessBoard);
         System.out.println("Enter a tile to attack");
         input = scanner.nextLine();
-        int[] guessingTileIntArray = new int[3];
+        int[] guessingTileIntArray = new int[2];
 
         boolean flag = true;
 
