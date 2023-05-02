@@ -262,12 +262,40 @@ public class Main {
     /** function for printing the game board */
     public static void printGameBoard(char[][] gameBoard) {
         System.out.println("Your current game board:");
-        for (char[] row : gameBoard) {
-            for (char c : row) {
-                System.out.print(c);
+        int ROWS = gameBoard.length;
+        int COLS = gameBoard[0].length;
+
+        // calculate number of digits in maximum row/col number
+        int rowDigits = Integer.toString(ROWS - 1).length();
+        int colDigits = Integer.toString(COLS - 1).length();
+
+
+        // print column numbers
+        System.out.print("  ");
+        for (int j = 0; j < COLS; j++) {
+            // calculate number of spaces before col number
+            int numSpaces = colDigits - Integer.toString(j).length() + 2;
+            String spaces = new String(new char[numSpaces]).replace("\0", " ");
+
+            System.out.print(spaces + j);
+        }
+        System.out.println();
+
+        // print board
+        for (int i = 0; i < ROWS; i++) {
+            // calculate number of spaces before row number
+            int numSpaces = rowDigits - Integer.toString(i).length() + 2;
+            String spaces = new String(new char[numSpaces]).replace("\0", " ");
+
+            // print row number
+            System.out.print(spaces + i);
+
+            for (int j = 0; j < COLS; j++) {
+                System.out.print(" " + gameBoard[i][j]);
             }
             System.out.println();
         }
+
     }
 
 
