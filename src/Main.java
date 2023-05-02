@@ -8,7 +8,8 @@ public class Main {
     public static Random rnd;
 
     public static void battleshipGame() {
-        //shaked
+        // happy birthday shaked!!!
+
         String input, regex; // used for converting str to int array
         int i, j; // index
 
