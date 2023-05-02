@@ -116,6 +116,7 @@ public class Main {
             }
         }
 
+
         // filling computer game board
         for (i = 0; i < battleshipArray.length; i++) {
             X = rnd.nextInt(ROWS);
@@ -187,6 +188,22 @@ public class Main {
                 flag = false;
             }
         }
+
+        // attacking - computer round
+        X = rnd.nextInt(ROWS);
+        Y = rnd.nextInt(COLS);
+        flag = true;
+
+        while (flag) {
+            if (computerGuessBoard[X][Y] != '–') {
+                X = rnd.nextInt(ROWS);
+                Y = rnd.nextInt(COLS);
+            } else {
+                flag = false;
+
+            }
+        }
+
 
         // end of main battleship game
     }
