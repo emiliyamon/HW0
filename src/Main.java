@@ -153,8 +153,7 @@ public class Main {
                     ORIENTATION = rnd.nextInt(2);
                 }
 
-                fillGameBoard(playerGameBoard, X,Y, ORIENTATION, S);
-                printGameBoard(playerGameBoard);
+                fillGameBoard(computerGameBoard, X,Y, ORIENTATION, S);
                 AMOUNT--;
             }
         }
