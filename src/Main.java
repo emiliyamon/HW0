@@ -9,7 +9,7 @@ public class Main {
 
     public static void battleshipGame() {
         // happy birthday shaked!!!
-
+        //hello
         String input, regex; // used for converting str to int array
         int i, j; // index
 
