@@ -181,10 +181,18 @@ public class Main {
                 flag = false;
             }
         }
+        if (computerGameBoard[guessingTileIntArray[0]][guessingTileIntArray[1]] == '–') {
+            System.out.println("That is a miss!");
+            playerGuessBoard[guessingTileIntArray[0]][guessingTileIntArray[1]] = 'X';
+        }
+        if (computerGameBoard[guessingTileIntArray[0]][guessingTileIntArray[1]] == '#') {
+            System.out.println("That is a hit!");
+            playerGuessBoard[guessingTileIntArray[0]][guessingTileIntArray[1]] = 'V';
+        }
+        }
 
         // end of main battleship game
     }
-
 
     /** Function for conversion of string to int array */
     public static int[] stringToIntArray(String input, String regex) {
