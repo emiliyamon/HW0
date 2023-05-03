@@ -4,8 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="96a1b52d-5ab1-4ab7-9b35-bedbdb835a61" name="Changes" comment="03052023 1254&#10;fixing error messages&#10;version 0.5 completed">
+    <list default="true" id="96a1b52d-5ab1-4ab7-9b35-bedbdb835a61" name="Changes" comment="03052023 1343&#10;path to testim added&#10;version 0.5 completed">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -208,7 +209,14 @@
       <option name="project" value="LOCAL" />
       <updated>1683107678788</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="03052023 1343&#10;path to testim added&#10;version 0.5 completed">
+      <created>1683110643110</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1683110643110</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -242,6 +250,17 @@
     <MESSAGE value="03052023 1240&#10;plyer attack turn" />
     <MESSAGE value="03052023 1250&#10;computer attack turn" />
     <MESSAGE value="03052023 1254&#10;fixing error messages&#10;version 0.5 completed" />
-    <option name="LAST_COMMIT_MESSAGE" value="03052023 1254&#10;fixing error messages&#10;version 0.5 completed" />
+    <MESSAGE value="03052023 1343&#10;path to testim added&#10;version 0.5 completed" />
+    <option name="LAST_COMMIT_MESSAGE" value="03052023 1343&#10;path to testim added&#10;version 0.5 completed" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.ArrayIndexOutOfBoundsException" package="java.lang" />
+          <option name="timeStamp" value="3" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
