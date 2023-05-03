@@ -61,7 +61,7 @@ public class Main {
         }
         int[] playerBoatArray = new int[numOfBoats];
         int[] computerBoatArray = new int[numOfBoats];
-        int count = 1;
+        int count;
 
 
         printGameBoard(playerGameBoard);
@@ -214,7 +214,7 @@ public class Main {
             }
         }
 
-        // not sure if necessary, added because of an error message
+        // not sure if next two line are necessary, added because of an error message
         X = guessingTileIntArray[0];
         Y = guessingTileIntArray[1];
 
@@ -244,6 +244,7 @@ public class Main {
         // attacking - computer round
         X = rnd.nextInt(ROWS);
         Y = rnd.nextInt(COLS);
+        int rPlayer = numOfBoats;
         flag = true;
 
         while (flag) {
@@ -256,7 +257,29 @@ public class Main {
             }
         }
 
+        if (playerGameBoard[X][Y] == '–') {
+            System.out.println("That is a miss!");
+            computerGuessBoard[X][Y] = 'X';
+            playerGameBoard[X][Y] = 'X';
+        }
+        if (playerGameBoard[X][Y] == '#') {
+            System.out.println("That is a hit!");
+            computerGuessBoard[X][Y] = 'V';
+            boatId = playerBoatBoard[X][Y];
+            playerBoatArray[boatId-1] = (playerBoatArray[boatId-1] - 1);
+            for (i = 0; i < playerBoatBoard.length; i++) {
+                if (playerBoatArray[i] == 0) {
+                    System.out.println("Your battleship has been drowned, you have left" + rPlayer + " more battleships!");
+                    rComputer = (rComputer - 1);
+                }
+            }
+        }
+
         printGameBoard(playerGameBoard);
+
+        if (rPlayer == 0) {
+            System.out.println("You lost ):");
+        }
 
 
         // end of main battleship game
@@ -370,7 +393,7 @@ public class Main {
                     boatBoard[i][Y] = boatLocationMarker;
                 }
         }
-        boatArray[count-1] = S; // in the array the number of the boat is the index-1 and the value is it's length
+        boatArray[count-1] = S; // in the array the number of the boat is the index-1 and the value is its length
     }
 
 
@@ -413,11 +436,6 @@ public class Main {
 
     }
 
-
-    /** function for checking if ship is sunk */
-    public static boolean isSunk(char[][] gameboard, int ROW, int COL) {
-        return false;
-    }
 
 
     public static void main(String[] args) throws IOException {
