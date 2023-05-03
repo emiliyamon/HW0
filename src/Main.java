@@ -82,14 +82,14 @@ public class Main {
             // send string to function to get int array
             locationOrientationArray = stringToIntArray(input, regex);
 
-            X = locationOrientationArray[0];
-            Y = locationOrientationArray[1];
-            ORIENTATION = locationOrientationArray[2];
             S = battleshipArray[i][1];
             AMOUNT = battleshipArray[i][0];
             count = 1;
 
             while (AMOUNT > 0) {
+                X = locationOrientationArray[0];
+                Y = locationOrientationArray[1];
+                ORIENTATION = locationOrientationArray[2];
                 boolean overlapTestResult = false;
                 boolean adjacentTestResult = false;
 

@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="96a1b52d-5ab1-4ab7-9b35-bedbdb835a61" name="Changes" comment="02052023 1837&#10;adding functions for keeping track of boats">
+    <list default="true" id="96a1b52d-5ab1-4ab7-9b35-bedbdb835a61" name="Changes" comment="03052023 1250&#10;computer attack turn">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
     </list>
@@ -178,7 +178,21 @@
       <option name="project" value="LOCAL" />
       <updated>1683041841231</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="03052023 1240&#10;plyer attack turn">
+      <created>1683106871065</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1683106871065</updated>
+    </task>
+    <task id="LOCAL-00020" summary="03052023 1250&#10;computer attack turn">
+      <created>1683107443854</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1683107443854</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -209,6 +223,8 @@
     <MESSAGE value="02052023 17011&#10;commit a '#'" />
     <MESSAGE value="02052023 1811&#10;adding functions for keeping track of boats" />
     <MESSAGE value="02052023 1837&#10;adding functions for keeping track of boats" />
-    <option name="LAST_COMMIT_MESSAGE" value="02052023 1837&#10;adding functions for keeping track of boats" />
+    <MESSAGE value="03052023 1240&#10;plyer attack turn" />
+    <MESSAGE value="03052023 1250&#10;computer attack turn" />
+    <option name="LAST_COMMIT_MESSAGE" value="03052023 1250&#10;computer attack turn" />
   </component>
 </project>
