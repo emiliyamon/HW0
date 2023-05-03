@@ -61,12 +61,12 @@ public class Main {
         }
         int[] playerBoatArray = new int[numOfBoats];
         int[] computerBoatArray = new int[numOfBoats];
+        int count = 1;
 
 
         printGameBoard(playerGameBoard);
 
         int X, Y,ORIENTATION, S, AMOUNT;
-        int count = 0;
         int[] locationOrientationArray = new int[3];
 
         // filling player game board
@@ -87,6 +87,7 @@ public class Main {
             ORIENTATION = locationOrientationArray[2];
             S = battleshipArray[i][1];
             AMOUNT = battleshipArray[i][0];
+            count = 1;
 
             while (AMOUNT > 0) {
                 boolean overlapTestResult = false;
@@ -127,6 +128,7 @@ public class Main {
                 fillBoatBoard(playerBoatBoard, X,Y, ORIENTATION, S, playerBoatArray, count);
                 printGameBoard(playerGameBoard);
                 AMOUNT--;
+                count++;
             }
         }
 
@@ -138,6 +140,8 @@ public class Main {
             ORIENTATION = rnd.nextInt(2);
             S = battleshipArray[i][1];
             AMOUNT = battleshipArray[i][0];
+            count = 1;
+
 
             // orientation 0 for horizontal, 1 for vertical
             // horizontal size s from (x,y) to (x, y+s-1)
@@ -175,8 +179,9 @@ public class Main {
                 }
 
                 fillGameBoard(computerGameBoard, X,Y, ORIENTATION, S);
-                fillGameBoard(computerGameBoard, X,Y, ORIENTATION, S);
+                fillBoatBoard(computerBoatBoard, X,Y, ORIENTATION, S, computerBoatArray, count);
                 AMOUNT--;
+                count++;
             }
         }
 
@@ -188,15 +193,20 @@ public class Main {
         int[] guessingTileIntArray = new int[2];
 
         boolean flag = true;
+        int boatId;
+        int rComputer = numOfBoats;
 
         while (flag) {
             // send string to function to get int array
             guessingTileIntArray = stringToIntArray(input, ", ");
             // checking the input
-            if (guessingTileIntArray[0] > ROWS || guessingTileIntArray[1] > COLS) {
+            X = guessingTileIntArray[0];
+            Y = guessingTileIntArray[1];
+
+            if (X > ROWS || Y > COLS) {
                 System.out.println("Illegal tile, try again!");
                 input = scanner.nextLine();
-            } else if (playerGuessBoard[guessingTileIntArray[0]][guessingTileIntArray[1]] != '–') {
+            } else if (playerGuessBoard[X][Y] != '–') {
                 System.out.println("Tile already attacked, try again!");
                 input = scanner.nextLine();
             } else {
@@ -204,15 +214,30 @@ public class Main {
             }
         }
 
-        if (computerGameBoard[guessingTileIntArray[0]][guessingTileIntArray[1]] == '–') {
+        // not sure if necessary, added because of an error message
+        X = guessingTileIntArray[0];
+        Y = guessingTileIntArray[1];
+
+        if (computerGameBoard[X][Y] == '–') {
             System.out.println("That is a miss!");
-            playerGuessBoard[guessingTileIntArray[0]][guessingTileIntArray[1]] = 'X';
-            computerGameBoard[guessingTileIntArray[0]][guessingTileIntArray[1]] = 'X';
+            playerGuessBoard[X][Y] = 'X';
+            computerGameBoard[X][Y] = 'X';
         }
-        if (computerGameBoard[guessingTileIntArray[0]][guessingTileIntArray[1]] == '#') {
+        if (computerGameBoard[X][Y] == '#') {
             System.out.println("That is a hit!");
-            playerGuessBoard[guessingTileIntArray[0]][guessingTileIntArray[1]] = 'V';
-            computerGameBoard[guessingTileIntArray[0]][guessingTileIntArray[1]] = 'V';
+            playerGuessBoard[X][Y] = 'V';
+            boatId = computerBoatBoard[X][Y];
+            computerBoatArray[boatId-1] = (computerBoatArray[boatId-1] - 1);
+            for (i = 0; i < computerBoatBoard.length; i++) {
+                if (computerBoatArray[i] == 0) {
+                    System.out.println("The computer's battleship has been drowned, " + rComputer + " more battleships to go!");
+                    rComputer = (rComputer - 1);
+                }
+            }
+        }
+
+        if (rComputer == 0) {
+            System.out.println("You won the game!");
         }
 
 
@@ -334,18 +359,18 @@ public class Main {
 
     /** function for keeping track of battleships */
     public static void fillBoatBoard(int[][] boatBoard, int X, int Y, int ORIENTATION, int S, int[] boatArray, int count) {
-        char boatLocation = 1;
+        int boatLocationMarker = count; // count represents number of boat on the board
         switch (ORIENTATION) {
             case 0:
                 for (int j = Y; j <= Y + S - 1; j++) {
-                    boatBoard[X][j] = boatLocation;
+                    boatBoard[X][j] = boatLocationMarker;
                 }
             case 1:
                 for (int i = X; i <= X + S - 1; i++) {
-                    boatBoard[i][Y] = boatLocation;
+                    boatBoard[i][Y] = boatLocationMarker;
                 }
         }
-        boatArray[count] = S;
+        boatArray[count-1] = S; // in the array the number of the boat is the index-1 and the value is it's length
     }
 
 

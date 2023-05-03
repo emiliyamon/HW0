@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="96a1b52d-5ab1-4ab7-9b35-bedbdb835a61" name="Changes" comment="02052023 17011&#10;commit a '#'">
+    <list default="true" id="96a1b52d-5ab1-4ab7-9b35-bedbdb835a61" name="Changes" comment="02052023 1837&#10;adding functions for keeping track of boats">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
     </list>
@@ -164,7 +164,21 @@
       <option name="project" value="LOCAL" />
       <updated>1683036720192</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="02052023 1811&#10;adding functions for keeping track of boats">
+      <created>1683040305671</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1683040305671</updated>
+    </task>
+    <task id="LOCAL-00018" summary="02052023 1837&#10;adding functions for keeping track of boats">
+      <created>1683041841231</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1683041841231</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -193,6 +207,8 @@
     <MESSAGE value="1309" />
     <MESSAGE value="DIKAON" />
     <MESSAGE value="02052023 17011&#10;commit a '#'" />
-    <option name="LAST_COMMIT_MESSAGE" value="02052023 17011&#10;commit a '#'" />
+    <MESSAGE value="02052023 1811&#10;adding functions for keeping track of boats" />
+    <MESSAGE value="02052023 1837&#10;adding functions for keeping track of boats" />
+    <option name="LAST_COMMIT_MESSAGE" value="02052023 1837&#10;adding functions for keeping track of boats" />
   </component>
 </project>
