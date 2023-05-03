@@ -63,7 +63,7 @@ public class Main {
         int[] computerBoatArray = new int[numOfBoats];
         int count;
 
-
+        System.out.println("Your current game board:");
         printGameBoard(playerGameBoard);
 
         int X, Y,ORIENTATION, S, AMOUNT;
@@ -132,7 +132,10 @@ public class Main {
 
                 fillGameBoard(playerGameBoard, X,Y, ORIENTATION, S);
                 fillBoatBoard(playerBoatBoard, X,Y, ORIENTATION, S, playerBoatArray, count);
+
+                System.out.println("Your current game board:");
                 printGameBoard(playerGameBoard);
+
                 AMOUNT--;
                 count++;
             }
@@ -157,18 +160,21 @@ public class Main {
                 boolean overlapTestResult = false;
                 boolean adjacentTestResult = false;
 
-                if (X > ROWS || Y > COLS) {
+                if (X >= ROWS || Y >= COLS) {
                     X = rnd.nextInt(ROWS);
                     Y = rnd.nextInt(COLS);
                     ORIENTATION = rnd.nextInt(2);
+                    continue;
                 } else if (ORIENTATION == 1 && (Y+S-1) >= COLS) {
                     X = rnd.nextInt(ROWS);
                     Y = rnd.nextInt(COLS);
                     ORIENTATION = rnd.nextInt(2);
+                    continue;
                 } else if (ORIENTATION == 0 && (X+S-1) >= ROWS) {
                     X = rnd.nextInt(ROWS);
                     Y = rnd.nextInt(COLS);
                     ORIENTATION = rnd.nextInt(2);
+                    continue;
                 }
 
                 overlapTestResult = overlapTest(X, Y, ORIENTATION, S, computerGameBoard);
@@ -178,10 +184,12 @@ public class Main {
                     X = rnd.nextInt(ROWS);
                     Y = rnd.nextInt(COLS);
                     ORIENTATION = rnd.nextInt(2);
+                    continue;
                 } else if (adjacentTestResult) {
                     X = rnd.nextInt(ROWS);
                     Y = rnd.nextInt(COLS);
                     ORIENTATION = rnd.nextInt(2);
+                    continue;
                 }
 
                 fillGameBoard(computerGameBoard, X,Y, ORIENTATION, S);
@@ -404,7 +412,6 @@ public class Main {
 
     /** function for printing the game board */
     public static void printGameBoard(char[][] gameBoard) {
-        System.out.println("Your current game board:");
         int ROWS = gameBoard.length;
         int COLS = gameBoard[0].length;
 
@@ -434,7 +441,7 @@ public class Main {
             System.out.print(spaces + i);
 
             for (int j = 0; j < COLS; j++) {
-                System.out.print(" " + gameBoard[i][j]);
+                System.out.print(spaces + gameBoard[i][j]);
             }
             System.out.println();
         }
