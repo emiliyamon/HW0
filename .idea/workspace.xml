@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="96a1b52d-5ab1-4ab7-9b35-bedbdb835a61" name="Changes" comment="03052023 2038&#10;changed ranges in conditions">
+    <list default="true" id="96a1b52d-5ab1-4ab7-9b35-bedbdb835a61" name="Changes" comment="03052023 2104&#10;tried to fix it but couldn't, good luck">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
     </list>
@@ -223,7 +223,14 @@
       <option name="project" value="LOCAL" />
       <updated>1683135541807</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="03052023 2104&#10;tried to fix it but couldn't, good luck">
+      <created>1683137078905</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1683137078905</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -259,7 +266,8 @@
     <MESSAGE value="03052023 1254&#10;fixing error messages&#10;version 0.5 completed" />
     <MESSAGE value="03052023 1343&#10;path to testim added&#10;version 0.5 completed" />
     <MESSAGE value="03052023 2038&#10;changed ranges in conditions" />
-    <option name="LAST_COMMIT_MESSAGE" value="03052023 2038&#10;changed ranges in conditions" />
+    <MESSAGE value="03052023 2104&#10;tried to fix it but couldn't, good luck" />
+    <option name="LAST_COMMIT_MESSAGE" value="03052023 2104&#10;tried to fix it but couldn't, good luck" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

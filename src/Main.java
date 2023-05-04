@@ -202,6 +202,7 @@ public class Main {
        // attacking - player round
         System.out.println("Your current guessing board:");
         printGameBoard(playerGuessBoard);
+
         System.out.println("Enter a tile to attack");
         input = scanner.nextLine();
         int[] guessingTileIntArray = new int[2];
@@ -217,7 +218,7 @@ public class Main {
             X = guessingTileIntArray[0];
             Y = guessingTileIntArray[1];
 
-            if (X > ROWS || Y > COLS) {
+            if (X >= ROWS || Y >= COLS) {
                 System.out.println("Illegal tile, try again!");
                 input = scanner.nextLine();
             } else if (playerGuessBoard[X][Y] != '–') {
@@ -235,16 +236,18 @@ public class Main {
         if (computerGameBoard[X][Y] == '–') {
             System.out.println("That is a miss!");
             playerGuessBoard[X][Y] = 'X';
-            computerGameBoard[X][Y] = 'X';
         }
         if (computerGameBoard[X][Y] == '#') {
             System.out.println("That is a hit!");
             playerGuessBoard[X][Y] = 'V';
+            computerGameBoard[X][Y] = 'X';
+
             boatId = computerBoatBoard[X][Y];
-            computerBoatArray[boatId-1] = (computerBoatArray[boatId-1] - 1);
+            computerBoatArray[boatId-1] = computerBoatArray[boatId-1] - 1;
             for (i = 0; i < computerBoatBoard.length; i++) {
                 if (computerBoatArray[i] == 0) {
                     System.out.println("The computer's battleship has been drowned, " + rComputer + " more battleships to go!");
+                    computerBoatArray[i] = -1;
                     rComputer = (rComputer - 1);
                 }
             }
@@ -279,16 +282,20 @@ public class Main {
         if (playerGameBoard[X][Y] == '#') {
             System.out.println("That is a hit!");
             computerGuessBoard[X][Y] = 'V';
+            playerGameBoard[X][Y] = 'X';
+
             boatId = playerBoatBoard[X][Y];
-            playerBoatArray[boatId-1] = (playerBoatArray[boatId-1] - 1);
+            playerBoatArray[boatId-1] = playerBoatArray[boatId-1] - 1;
             for (i = 0; i < playerBoatBoard.length; i++) {
                 if (playerBoatArray[i] == 0) {
                     System.out.println("Your battleship has been drowned, you have left" + rPlayer + " more battleships!");
+                    playerBoatArray[i] = -1;
                     rComputer = (rComputer - 1);
                 }
             }
         }
 
+        System.out.println("Your current game board:");
         printGameBoard(playerGameBoard);
 
         if (rPlayer == 0) {
