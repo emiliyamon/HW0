@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="96a1b52d-5ab1-4ab7-9b35-bedbdb835a61" name="Changes" comment="04052023 1405&#10;fixes in the attacking section - making it into a do-while loop">
+    <list default="true" id="96a1b52d-5ab1-4ab7-9b35-bedbdb835a61" name="Changes" comment="04052023 1505&#10;the pointers are conspiring against us&#10;&#10;made changes in boat building way">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
     </list>
@@ -230,7 +230,14 @@
       <option name="project" value="LOCAL" />
       <updated>1683198324153</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="04052023 1505&#10;the pointers are conspiring against us&#10;&#10;made changes in boat building way">
+      <created>1683201981847</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1683201981847</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -267,7 +274,8 @@
     <MESSAGE value="03052023 1343&#10;path to testim added&#10;version 0.5 completed" />
     <MESSAGE value="03052023 2038&#10;changed ranges in conditions" />
     <MESSAGE value="04052023 1405&#10;fixes in the attacking section - making it into a do-while loop" />
-    <option name="LAST_COMMIT_MESSAGE" value="04052023 1405&#10;fixes in the attacking section - making it into a do-while loop" />
+    <MESSAGE value="04052023 1505&#10;the pointers are conspiring against us&#10;&#10;made changes in boat building way" />
+    <option name="LAST_COMMIT_MESSAGE" value="04052023 1505&#10;the pointers are conspiring against us&#10;&#10;made changes in boat building way" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

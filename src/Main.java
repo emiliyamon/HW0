@@ -65,6 +65,7 @@ public class Main {
         for (i = 0; i < battleshipArray.length; i++) {
             numOfBoats = numOfBoats + battleshipArray[i][0];
         }
+
         int[] playerBoatArray = new int[numOfBoats];
         int[] computerBoatArray = new int[numOfBoats];
         int count;
@@ -256,17 +257,17 @@ public class Main {
 
                 boatId = computerBoatBoard[X][Y];
                 computerBoatArray[boatId - 1] = computerBoatArray[boatId - 1] - 1;
-                for (i = 0; i < computerBoatBoard.length; i++) {
+
+                for (i = 0; i < computerBoatArray.length; i++) {
                     if (computerBoatArray[i] == 0) {
+                        rComputer = (rComputer - 1);
                         System.out.println("The computer's battleship has been drowned, " + rComputer + " more battleships to go!");
                         computerBoatArray[i] = -1;
-                        rComputer = (rComputer - 1);
                     }
                 }
-            }
-
-            if (rComputer == 0) {
-                break;
+                if (rComputer == 0) {
+                    break;
+                }
             }
 
 
@@ -296,25 +297,25 @@ public class Main {
 
                 boatId = playerBoatBoard[X][Y];
                 playerBoatArray[boatId - 1] = playerBoatArray[boatId - 1] - 1;
-                for (i = 0; i < playerBoatBoard.length; i++) {
+                for (i = 0; i < playerBoatArray.length; i++) {
                     if (playerBoatArray[i] == 0) {
+                        rPlayer = (rPlayer - 1);
                         System.out.println("Your battleship has been drowned, you have left" + rPlayer + " more battleships!");
                         playerBoatArray[i] = -1;
-                        rPlayer = (rPlayer - 1);
                     }
+                }
+                if (rPlayer == 0) {
+                    break;
                 }
             }
 
             System.out.println("Your current game board:");
             printGameBoard(playerGameBoard);
 
-
-            if (rPlayer == 0) {
-                break;
-            }
-
         }
 
+
+        // determine the winner
         if (rComputer == 0) {
             System.out.println("You won the game!");
         } else {
@@ -336,24 +337,22 @@ public class Main {
 
 
     /** Function for game and guess board building */
-    public static char[][] buildGameBoard(char[][] gameBoard) {
+    public static void buildGameBoard(char[][] gameBoard) {
         for (int i = 0; i < gameBoard.length; i++) {
             for (int j = 0; j < gameBoard[0].length; j++) {
                 gameBoard[i][j] = '–';
             }
         }
-        return gameBoard;
     }
 
 
     /** Function for keeping track board building */
-    public static int[][] buildBoatBoard(int[][] boatBoard) {
+    public static void buildBoatBoard(int[][] boatBoard) {
         for (int i = 0; i < boatBoard.length; i++) {
             for (int j = 0; j < boatBoard[0].length; j++) {
                 boatBoard[i][j] = 0;
             }
         }
-        return boatBoard;
     }
 
 
