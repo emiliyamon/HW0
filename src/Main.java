@@ -22,16 +22,22 @@ public class Main {
 
         int ROWS = boardSizeIntArray[0];
         int COLS = boardSizeIntArray[1];
-        char[][] gameBoard = new char[ROWS][COLS];
-        int[][] boatBoard = new int[ROWS][COLS]; // for keeping track of boats
 
         // building boards using function
-        char[][] playerGameBoard = buildGameBoard(gameBoard);
-        char[][] playerGuessBoard = buildGameBoard(gameBoard);
-        char[][] computerGameBoard = buildGameBoard(gameBoard);
-        char[][] computerGuessBoard = buildGameBoard(gameBoard);
-        int[][] playerBoatBoard = buildBoatBoard(boatBoard);
-        int[][] computerBoatBoard = buildBoatBoard(boatBoard);
+        char[][] playerGameBoard = new char[ROWS][COLS];
+        buildGameBoard(playerGameBoard);
+        char[][] playerGuessBoard = new char[ROWS][COLS];
+        buildGameBoard(playerGuessBoard);
+        char[][] computerGameBoard = new char[ROWS][COLS];
+        buildGameBoard(computerGameBoard);
+        char[][] computerGuessBoard = new char[ROWS][COLS];
+        buildGameBoard(computerGuessBoard);
+
+        // for keeping track of boats
+        int[][] playerBoatBoard = new int[ROWS][COLS];
+        buildBoatBoard(playerBoatBoard);
+        int[][] computerBoatBoard = new int[ROWS][COLS];
+        buildBoatBoard(computerBoatBoard);
 
         System.out.println("Enter battleship sizes");
         String battleshipSizes = scanner.nextLine();
@@ -63,16 +69,20 @@ public class Main {
         int[] computerBoatArray = new int[numOfBoats];
         int count;
 
-        //System.out.println("Your current game board:"); לא צריך להדפיס פה את הלוח
-        //printGameBoard(playerGameBoard);
+        System.out.println("Your current game board:");
+        printGameBoard(playerGameBoard);
 
         int X, Y,ORIENTATION, S, AMOUNT;
         int[] locationOrientationArray = new int[3]; //למה זה מושחר? אולי כי בשורה 82 אנחנו מקבלים מערך של אינטים מהפונק' המרה שלנו, אז לא צריך להגדיר פה מערך אינטים חדש?
 
         // filling player game board
         for (i = 0; i < battleshipArray.length; i++) {
-            //האם אפשר להעביר את s לכאן, ולשנות בשורה הבאה ל s+?
-            System.out.println("Enter location and orientation for battleship of size " + battleshipArray[i][1]);
+
+            S = battleshipArray[i][1];
+            AMOUNT = battleshipArray[i][0];
+            count = 1;
+
+            System.out.println("Enter location and orientation for battleship of size " + S);
             input = scanner.nextLine();
             // format "x, y, orientation"
             regex = ", ";
@@ -82,9 +92,6 @@ public class Main {
             // send string to function to get int array
             locationOrientationArray = stringToIntArray(input, regex);
 
-            S = battleshipArray[i][1];
-            AMOUNT = battleshipArray[i][0];
-            count = 1;
 
             while (AMOUNT > 0) {
                 X = locationOrientationArray[0];
@@ -202,7 +209,8 @@ public class Main {
         int rComputer = numOfBoats;
         int rPlayer = numOfBoats;
 
-        do {
+        while (rComputer != 0 && rPlayer != 0) {
+
             // attacking - player round
 
             System.out.println("Your current guessing board:");
@@ -257,6 +265,10 @@ public class Main {
                 }
             }
 
+            if (rComputer == 0) {
+                break;
+            }
+
 
             // attacking - computer round
             X = rnd.nextInt(ROWS);
@@ -297,11 +309,15 @@ public class Main {
             printGameBoard(playerGameBoard);
 
 
-        } while (rComputer > 0 && rPlayer > 0);
+            if (rPlayer == 0) {
+                break;
+            }
+
+        }
 
         if (rComputer == 0) {
             System.out.println("You won the game!");
-        } else if (rPlayer == 0) {
+        } else {
             System.out.println("You lost ):");
         }
 
