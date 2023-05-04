@@ -333,7 +333,13 @@ public class Main {
         // end of main battleship game
     }
 
-    /** Function for conversion of string to int array */
+
+    /**
+     * Function for conversion of string to int array
+     * @param input - string input from the user
+     * @param regex - indication where to split the string
+     * @return - returns the int array
+     */
     public static int[] stringToIntArray(String input, String regex) {
         String[] stringArray = input.split(regex);
         int[] intArray = new int[stringArray.length];
@@ -344,7 +350,10 @@ public class Main {
     }
 
 
-    /** Function for game and guess board building */
+    /**
+     * Function for game and guess board building
+     * @param gameBoard - gets the relevant game board and fills it with the correct sign
+     */
     public static void buildGameBoard(char[][] gameBoard) {
         for (int i = 0; i < gameBoard.length; i++) {
             for (int j = 0; j < gameBoard[0].length; j++) {
@@ -354,7 +363,10 @@ public class Main {
     }
 
 
-    /** Function for keeping track board building */
+    /**
+     * Function for keeping track board building
+     * @param boatBoard - gets the relevant game board and fills it with the numbers to indicate boat location
+     */
     public static void buildBoatBoard(int[][] boatBoard) {
         for (int i = 0; i < boatBoard.length; i++) {
             for (int j = 0; j < boatBoard[0].length; j++) {
@@ -364,7 +376,15 @@ public class Main {
     }
 
 
-    /** Function for checking overlapping battleships while filling board */
+    /**
+     * Function for checking overlapping battleships while filling board
+     * @param X - x coordinate
+     * @param Y - y coordinate
+     * @param ORIENTATION - orientation 0 or 1
+     * @param S - size of boat
+     * @param playerGameBoard - the game board to check in
+     * @return - true or false according to the test
+     */
     public static boolean overlapTest(int X, int Y, int ORIENTATION, int S, char[][] playerGameBoard) {
         char boatLocationMarker = '#';
         boolean overlapTestResult = false;
@@ -388,7 +408,15 @@ public class Main {
         return overlapTestResult;
     }
 
-    /** Function for checking adjacent battleships while filling board */
+    /**
+     * Function for checking adjacent battleships while filling board
+     * @param X - x coordinate
+     * @param Y - y coordinate
+     * @param ORIENTATION - orientation 0 or 1
+     * @param S - size of boat
+     * @param playerGameBoard - the game board to check in
+     * @return - true or false according to the test
+     */
     public static boolean adjacentTest(int X, int Y, int ORIENTATION, int S, char[][] playerGameBoard) {
         char boatLocation = '#';
         switch (ORIENTATION) {
@@ -415,7 +443,14 @@ public class Main {
     }
 
 
-    /** function for filling the game board */
+    /**
+     * function for filling the game board
+     * @param playerGameBoard- the game board to fill
+     * @param X - x coordinate
+     * @param Y - y coordinate
+     * @param ORIENTATION - orientation 0 or 1
+     * @param S - size of boat
+     */
     public static void fillGameBoard(char[][] playerGameBoard, int X, int Y, int ORIENTATION, int S) {
         char boatLocation = '#';
         switch (ORIENTATION) {
@@ -433,7 +468,16 @@ public class Main {
     }
 
 
-    /** function for keeping track of battleships */
+    /**
+     * function for keeping track of battleships
+     * @param boatBoard - relevant boat board
+     * @param X - x coordinate
+     * @param Y - y coordinate
+     * @param ORIENTATION - orientation 0 or 1
+     * @param S - size of boat
+     * @param boatArray - array of all boats of the player
+     * @param count - number of boat
+     */
     public static void fillBoatBoard(int[][] boatBoard, int X, int Y, int ORIENTATION, int S, int[] boatArray, int count) {
         int boatLocationMarker = count; // count represents number of boat on the board
         switch (ORIENTATION) {
@@ -452,7 +496,11 @@ public class Main {
     }
 
 
-    /** function for printing the game board */
+    /**
+     * function for printing the game board
+     * @param gameBoard - the relevant game board to print
+     */
+
     public static void printGameBoard(char[][] gameBoard) {
         int ROWS = gameBoard.length;
         int COLS = gameBoard[0].length;
