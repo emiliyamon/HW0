@@ -106,17 +106,22 @@ public class Main {
                     input = scanner.nextLine();
                     locationOrientationArray = stringToIntArray(input, regex);
                     continue;
+                } else if (X < 0 || Y < 0) {
+                    System.out.println("Illegal tile, try again!");
+                    input = scanner.nextLine();
+                    locationOrientationArray = stringToIntArray(input, regex);
+                    continue;
                 } else if (X >= ROWS || Y >= COLS) {
                     System.out.println("Illegal tile, try again!");
                     input = scanner.nextLine();
                     locationOrientationArray = stringToIntArray(input, regex);
                     continue;
-                } else if (ORIENTATION == 1 && (Y+S-1) >= COLS) {
+                } else if (ORIENTATION == 0 && (Y+S-1) >= COLS) {
                     System.out.println("Battleship exceeds the boundaries of the board, try again!");
                     input = scanner.nextLine();
                     locationOrientationArray = stringToIntArray(input, regex);
                     continue;
-                } else if (ORIENTATION == 0 && (X+S-1) >= ROWS) {
+                } else if (ORIENTATION == 1 && (X+S-1) >= ROWS) {
                     System.out.println("Battleship exceeds the boundaries of the board, try again!");
                     input = scanner.nextLine();
                     locationOrientationArray = stringToIntArray(input, regex);
@@ -173,12 +178,12 @@ public class Main {
                     Y = rnd.nextInt(COLS);
                     ORIENTATION = rnd.nextInt(2);
                     continue;
-                } else if (ORIENTATION == 1 && (Y+S-1) >= COLS) {
+                } else if (ORIENTATION == 0 && (Y+S-1) >= COLS) {
                     X = rnd.nextInt(ROWS);
                     Y = rnd.nextInt(COLS);
                     ORIENTATION = rnd.nextInt(2);
                     continue;
-                } else if (ORIENTATION == 0 && (X+S-1) >= ROWS) {
+                } else if (ORIENTATION == 1 && (X+S-1) >= ROWS) {
                     X = rnd.nextInt(ROWS);
                     Y = rnd.nextInt(COLS);
                     ORIENTATION = rnd.nextInt(2);
