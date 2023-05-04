@@ -364,21 +364,25 @@ public class Main {
     /** Function for checking overlapping battleships while filling board */
     public static boolean overlapTest(int X, int Y, int ORIENTATION, int S, char[][] playerGameBoard) {
         char boatLocationMarker = '#';
+        boolean overlapTestResult = false;
+
         switch (ORIENTATION) {
             case 0:
                 for (int j = Y; j < Y+S; j++) {
                     if (playerGameBoard[X][j] == boatLocationMarker) {
-                        return true;
+                        overlapTestResult = true;
                     }
                 }
+                break;
             case 1:
                 for (int i = X; i < X+S; i++) {
                     if (playerGameBoard[i][Y] == boatLocationMarker) {
-                        return true;
+                        overlapTestResult = true;
                     }
                 }
+                break;
         }
-        return false;
+        return overlapTestResult;
     }
 
     /** Function for checking adjacent battleships while filling board */
@@ -393,6 +397,7 @@ public class Main {
                         }
                     }
                 }
+                break;
             case 1:
                 for (int i = Math.max(0, X - 1); i <= Math.min(playerGameBoard.length - 1, X + S); i++) {
                     for (int j = Math.max(0, Y - 1); j <= Math.min(playerGameBoard[0].length - 1, Y + 1); j++) {
@@ -401,6 +406,7 @@ public class Main {
                         }
                     }
                 }
+                break;
         }
         return false;
     }
@@ -414,10 +420,12 @@ public class Main {
                 for (int j = Y; j <= Y + S - 1; j++) {
                     playerGameBoard[X][j] = boatLocation;
                 }
+                break;
             case 1:
                 for (int i = X; i <= X + S - 1; i++) {
                     playerGameBoard[i][Y] = boatLocation;
                 }
+                break;
         }
     }
 
@@ -430,10 +438,12 @@ public class Main {
                 for (int j = Y; j <= Y + S - 1; j++) {
                     boatBoard[X][j] = boatLocationMarker;
                 }
+                break;
             case 1:
                 for (int i = X; i <= X + S - 1; i++) {
                     boatBoard[i][Y] = boatLocationMarker;
                 }
+                break;
         }
         boatArray[count-1] = S; // in the array the number of the boat is the index-1 and the value is its length
     }

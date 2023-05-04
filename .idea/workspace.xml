@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="96a1b52d-5ab1-4ab7-9b35-bedbdb835a61" name="Changes" comment="04052023 1518&#10;more fixes in the gameplay-&#10;now game is working okay for games 1,2 and breaks at the 3rd">
+    <list default="true" id="96a1b52d-5ab1-4ab7-9b35-bedbdb835a61" name="Changes" comment="04052023 1559&#10;filling boats on board conditions">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
     </list>
@@ -244,7 +244,14 @@
       <option name="project" value="LOCAL" />
       <updated>1683202761344</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="04052023 1559&#10;filling boats on board conditions">
+      <created>1683205160789</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1683205160789</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -283,7 +290,8 @@
     <MESSAGE value="04052023 1405&#10;fixes in the attacking section - making it into a do-while loop" />
     <MESSAGE value="04052023 1505&#10;the pointers are conspiring against us&#10;&#10;made changes in boat building way" />
     <MESSAGE value="04052023 1518&#10;more fixes in the gameplay-&#10;now game is working okay for games 1,2 and breaks at the 3rd" />
-    <option name="LAST_COMMIT_MESSAGE" value="04052023 1518&#10;more fixes in the gameplay-&#10;now game is working okay for games 1,2 and breaks at the 3rd" />
+    <MESSAGE value="04052023 1559&#10;filling boats on board conditions" />
+    <option name="LAST_COMMIT_MESSAGE" value="04052023 1559&#10;filling boats on board conditions" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
