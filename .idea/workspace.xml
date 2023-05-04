@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="96a1b52d-5ab1-4ab7-9b35-bedbdb835a61" name="Changes" comment="04052023 1559&#10;filling boats on board conditions">
+    <list default="true" id="96a1b52d-5ab1-4ab7-9b35-bedbdb835a61" name="Changes" comment="04052023 1617&#10;fixed all switch-case with breaks">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
     </list>
@@ -251,7 +251,14 @@
       <option name="project" value="LOCAL" />
       <updated>1683205160789</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="04052023 1617&#10;fixed all switch-case with breaks">
+      <created>1683206253739</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1683206253739</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -266,7 +273,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="01052023 1313" />
     <MESSAGE value="01052023 1329" />
     <MESSAGE value="01052023 1330" />
     <MESSAGE value="01052023 1407" />
@@ -291,7 +297,8 @@
     <MESSAGE value="04052023 1505&#10;the pointers are conspiring against us&#10;&#10;made changes in boat building way" />
     <MESSAGE value="04052023 1518&#10;more fixes in the gameplay-&#10;now game is working okay for games 1,2 and breaks at the 3rd" />
     <MESSAGE value="04052023 1559&#10;filling boats on board conditions" />
-    <option name="LAST_COMMIT_MESSAGE" value="04052023 1559&#10;filling boats on board conditions" />
+    <MESSAGE value="04052023 1617&#10;fixed all switch-case with breaks" />
+    <option name="LAST_COMMIT_MESSAGE" value="04052023 1617&#10;fixed all switch-case with breaks" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

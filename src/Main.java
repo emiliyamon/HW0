@@ -239,6 +239,9 @@ public class Main {
                 if (X >= ROWS || Y >= COLS) {
                     System.out.println("Illegal tile, try again!");
                     input = scanner.nextLine();
+                } else if (X < 0 || Y < 0) {
+                    System.out.println("Illegal tile, try again!");
+                    input = scanner.nextLine();
                 } else if (playerGuessBoard[X][Y] != '–') {
                     System.out.println("Tile already attacked, try again!");
                     input = scanner.nextLine();
