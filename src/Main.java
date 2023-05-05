@@ -531,7 +531,7 @@ public class Main {
         // printing the last col number, and ln
         System.out.println(COLS - 1);
 
-        // print column numbers
+        //print column numbers
         //System.out.print("  ");
         //for (int j = 0; j < COLS; j++) {
         // calculate number of spaces before col number
