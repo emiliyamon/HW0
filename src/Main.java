@@ -73,7 +73,7 @@ public class Main {
         System.out.println("Your current game board:");
         printGameBoard(playerGameBoard);
 
-        int X, Y,ORIENTATION, S, AMOUNT;
+        int X, Y, ORIENTATION, S, AMOUNT;
         int[] locationOrientationArray = new int[3]; //למה זה מושחר? אולי כי בשורה 94 אנחנו מקבלים מערך של אינטים מהפונק' המרה שלנו, אז לא צריך להגדיר פה מערך אינטים חדש?
 
         // filling player game board
@@ -116,12 +116,12 @@ public class Main {
                     input = scanner.nextLine();
                     locationOrientationArray = stringToIntArray(input, regex);
                     continue;
-                } else if (ORIENTATION == 0 && (Y+S-1) >= COLS) {
+                } else if (ORIENTATION == 0 && (Y + S - 1) >= COLS) {
                     System.out.println("Battleship exceeds the boundaries of the board, try again!");
                     input = scanner.nextLine();
                     locationOrientationArray = stringToIntArray(input, regex);
                     continue;
-                } else if (ORIENTATION == 1 && (X+S-1) >= ROWS) {
+                } else if (ORIENTATION == 1 && (X + S - 1) >= ROWS) {
                     System.out.println("Battleship exceeds the boundaries of the board, try again!");
                     input = scanner.nextLine();
                     locationOrientationArray = stringToIntArray(input, regex);
@@ -143,8 +143,8 @@ public class Main {
                     continue;
                 }
 
-                fillGameBoard(playerGameBoard, X,Y, ORIENTATION, S);
-                fillBoatBoard(playerBoatBoard, X,Y, ORIENTATION, S, playerBoatArray, count);
+                fillGameBoard(playerGameBoard, X, Y, ORIENTATION, S);
+                fillBoatBoard(playerBoatBoard, X, Y, ORIENTATION, S, playerBoatArray, count);
 
                 System.out.println("Your current game board:");
                 printGameBoard(playerGameBoard);
@@ -178,12 +178,12 @@ public class Main {
                     Y = rnd.nextInt(COLS);
                     ORIENTATION = rnd.nextInt(2);
                     continue;
-                } else if (ORIENTATION == 0 && (Y+S-1) >= COLS) {
+                } else if (ORIENTATION == 0 && (Y + S - 1) >= COLS) {
                     X = rnd.nextInt(ROWS);
                     Y = rnd.nextInt(COLS);
                     ORIENTATION = rnd.nextInt(2);
                     continue;
-                } else if (ORIENTATION == 1 && (X+S-1) >= ROWS) {
+                } else if (ORIENTATION == 1 && (X + S - 1) >= ROWS) {
                     X = rnd.nextInt(ROWS);
                     Y = rnd.nextInt(COLS);
                     ORIENTATION = rnd.nextInt(2);
@@ -205,8 +205,8 @@ public class Main {
                     continue;
                 }
 
-                fillGameBoard(computerGameBoard, X,Y, ORIENTATION, S);
-                fillBoatBoard(computerBoatBoard, X,Y, ORIENTATION, S, computerBoatArray, count);
+                fillGameBoard(computerGameBoard, X, Y, ORIENTATION, S);
+                fillBoatBoard(computerBoatBoard, X, Y, ORIENTATION, S, computerBoatArray, count);
                 AMOUNT--;
                 count++;
             }
@@ -308,7 +308,7 @@ public class Main {
                 for (i = 0; i < playerBoatArray.length; i++) {
                     if (playerBoatArray[i] == 0) {
                         rPlayer = (rPlayer - 1);
-                        System.out.println("Your battleship has been drowned, you have left" + rPlayer + " more battleships!");
+                        System.out.println("Your battleship has been drowned, you have left " + rPlayer + " more battleships!");
                         playerBoatArray[i] = -1;
                     }
                 }
@@ -334,8 +334,10 @@ public class Main {
     }
 
     //זה דוקומינטציה תקינה מה שקורה מתחתיי?
+
     /**
      * Function for conversion of string to int array
+     *
      * @param input - string input from the user
      * @param regex - indication where to split the string
      * @return - returns the int array
@@ -352,6 +354,7 @@ public class Main {
 
     /**
      * Function for game and guess board building
+     *
      * @param gameBoard - gets the relevant game board and fills it with the correct sign
      */
     public static void buildGameBoard(char[][] gameBoard) {
@@ -365,6 +368,7 @@ public class Main {
 
     /**
      * Function for keeping track board building
+     *
      * @param boatBoard - gets the relevant game board and fills it with the numbers to indicate boat location
      */
     public static void buildBoatBoard(int[][] boatBoard) {
@@ -378,10 +382,11 @@ public class Main {
 
     /**
      * Function for checking overlapping battleships while filling board
-     * @param X - x coordinate
-     * @param Y - y coordinate
-     * @param ORIENTATION - orientation 0 or 1
-     * @param S - size of boat
+     *
+     * @param X               - x coordinate
+     * @param Y               - y coordinate
+     * @param ORIENTATION     - orientation 0 or 1
+     * @param S               - size of boat
      * @param playerGameBoard - the game board to check in
      * @return - true or false according to the test
      */
@@ -391,14 +396,14 @@ public class Main {
 
         switch (ORIENTATION) {
             case 0:
-                for (int j = Y; j < Y+S; j++) {
+                for (int j = Y; j < Y + S; j++) {
                     if (playerGameBoard[X][j] == boatLocationMarker) {
                         overlapTestResult = true;
                     }
                 }
                 break;
             case 1:
-                for (int i = X; i < X+S; i++) {
+                for (int i = X; i < X + S; i++) {
                     if (playerGameBoard[i][Y] == boatLocationMarker) {
                         overlapTestResult = true;
                     }
@@ -410,10 +415,11 @@ public class Main {
 
     /**
      * Function for checking adjacent battleships while filling board
-     * @param X - x coordinate
-     * @param Y - y coordinate
-     * @param ORIENTATION - orientation 0 or 1
-     * @param S - size of boat
+     *
+     * @param X               - x coordinate
+     * @param Y               - y coordinate
+     * @param ORIENTATION     - orientation 0 or 1
+     * @param S               - size of boat
      * @param playerGameBoard - the game board to check in
      * @return - true or false according to the test
      */
@@ -445,11 +451,12 @@ public class Main {
 
     /**
      * function for filling the game board
+     *
      * @param playerGameBoard- the game board to fill
-     * @param X - x coordinate
-     * @param Y - y coordinate
-     * @param ORIENTATION - orientation 0 or 1
-     * @param S - size of boat
+     * @param X                - x coordinate
+     * @param Y                - y coordinate
+     * @param ORIENTATION      - orientation 0 or 1
+     * @param S                - size of boat
      */
     public static void fillGameBoard(char[][] playerGameBoard, int X, int Y, int ORIENTATION, int S) {
         char boatLocation = '#';
@@ -470,13 +477,14 @@ public class Main {
 
     /**
      * function for keeping track of battleships
-     * @param boatBoard - relevant boat board
-     * @param X - x coordinate
-     * @param Y - y coordinate
+     *
+     * @param boatBoard   - relevant boat board
+     * @param X           - x coordinate
+     * @param Y           - y coordinate
      * @param ORIENTATION - orientation 0 or 1
-     * @param S - size of boat
-     * @param boatArray - array of all boats of the player
-     * @param count - number of boat
+     * @param S           - size of boat
+     * @param boatArray   - array of all boats of the player
+     * @param count       - number of boat
      */
     public static void fillBoatBoard(int[][] boatBoard, int X, int Y, int ORIENTATION, int S, int[] boatArray, int count) {
         int boatLocationMarker = count; // count represents number of boat on the board
@@ -492,51 +500,90 @@ public class Main {
                 }
                 break;
         }
-        boatArray[count-1] = S; // in the array the number of the boat is the index-1 and the value is its length
+        boatArray[count - 1] = S; // in the array the number of the boat is the index-1 and the value is its length
     }
 
 
     /**
      * function for printing the game board
+     *
      * @param gameBoard - the relevant game board to print
      */
 
     public static void printGameBoard(char[][] gameBoard) {
-        int ROWS = gameBoard.length;
-        int COLS = gameBoard[0].length;
+        int ROWS = gameBoard.length; //num of rows in game board. exp: 11X11 -> ROWS = 11
+        int COLS = gameBoard[0].length;//num of columns in game board
 
         // calculate number of digits in maximum row/col number
-        int rowDigits = Integer.toString(ROWS - 1).length();
-        int colDigits = Integer.toString(COLS - 1).length();
+        //int rowDigits = Integer.toString(ROWS - 1).length();
+        //int colDigits = Integer.toString(COLS - 1).length();
 
+        String numLastRow = Integer.toString(ROWS - 1); //"10" הפכתי לסטרינג כדי לאתחל משנה של אורך המספר
+        //int numLastCol = COLS - 1;
+        int len = numLastRow.length(); //2אורך מספר השורה האחרונה
+
+        //printing the spaces before col numbers
+        for (int i = 0; i < len + 1; i++) {
+            System.out.print(" ");
+        }
+        // printing col numbers, without the last one (because of space after number)
+        for (int i = 0; i < ROWS - 1; i++) {
+            System.out.print(i +" ");
+        }
+        // printing the last col number, and ln
+        System.out.println(ROWS - 1);
 
         // print column numbers
-        System.out.print("  ");
-        for (int j = 0; j < COLS; j++) {
-            // calculate number of spaces before col number
-            int numSpaces = colDigits - Integer.toString(j).length() + 2;
-            String spaces = new String(new char[numSpaces]).replace("\0", " ");
+        //System.out.print("  ");
+        //for (int j = 0; j < COLS; j++) {
+        // calculate number of spaces before col number
+        //int numSpaces = colDigits - Integer.toString(j).length() + 2;
+        //String spaces = new String(new char[numSpaces]).replace("\0", " ");
 
-            System.out.print(spaces + j);
-        }
-        System.out.println();
-
-        // print board
+        //System.out.print(spaces + j);
+        //}
+        //System.out.println();
         for (int i = 0; i < ROWS; i++) {
+            String new_i = Integer.toString(i); //to check the length of row number
+            int len_i = new_i.length();
+            int counter = checkingSpaces(ROWS); //got the number of digits of last row number
+            int space = counter - len_i; //spaces = ההפרש
+            for (int k = 0; k < space; k++) {
+                System.out.print(" ");
+            }
+        System.out.print(i + " ");
+        for (int j = 0; j < COLS; j++) {
+                    System.out.print(gameBoard[i][j] + " ");
+                }
+        System.out.println();
+        }
+            // print board
+            //for (int i = 0; i < ROWS; i++) {
             // calculate number of spaces before row number
-            int numSpaces = rowDigits - Integer.toString(i).length() + 2;
-            String spaces = new String(new char[numSpaces]).replace("\0", " ");
+            //int numSpaces = rowDigits - Integer.toString(i).length() + 2;
+            //String spaces = new String(new char[numSpaces]).replace("\0", " ");
 
             // print row number
-            System.out.print(spaces + i);
+            //System.out.print(spaces + i);
 
-            for (int j = 0; j < COLS; j++) {
-                System.out.print(spaces + gameBoard[i][j]);
-            }
-            System.out.println();
+            //for (int j = 0; j < COLS; j++) {
+            //System.out.print(spaces + gameBoard[i][j]);
+            //}
+        System.out.println();
         }
 
+    public static int checkingSpaces(int ROWS) {
+        ROWS -= 1;
+        int counter = 0;
+        while (((ROWS) % 10) != (ROWS)) {
+            counter += 1;
+            ROWS /= 10;
+        }
+        return counter + 1;
     }
+
+
+
 
 
 
