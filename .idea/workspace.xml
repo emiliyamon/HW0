@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="96a1b52d-5ab1-4ab7-9b35-bedbdb835a61" name="Changes" comment="05052023 2057&#10;text differences &#10;&#10;running until end of game 5">
+    <list default="true" id="96a1b52d-5ab1-4ab7-9b35-bedbdb835a61" name="Changes" comment="05052023 2142&#10;fixed placement of count&#10;fixed update to boat array &#10;&#10;running until end of game 6!!">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -307,7 +306,14 @@
       <option name="project" value="LOCAL" />
       <updated>1683309446787</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL-00036" summary="05052023 2142&#10;fixed placement of count&#10;fixed update to boat array &#10;&#10;running until end of game 6!!">
+      <created>1683312156016</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1683312156016</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -322,7 +328,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="01052023 2045" />
     <MESSAGE value="01052023 2021" />
     <MESSAGE value="01052023 2110&#10;finished filling the player's board" />
     <MESSAGE value="02052023 1215" />
@@ -347,7 +352,8 @@
     <MESSAGE value="05052023 2030&#10;text differences &#10;&#10;running until end of game 5" />
     <MESSAGE value="05052023 2039&#10;text differences &#10;&#10;running until end of game 5" />
     <MESSAGE value="05052023 2057&#10;text differences &#10;&#10;running until end of game 5" />
-    <option name="LAST_COMMIT_MESSAGE" value="05052023 2057&#10;text differences &#10;&#10;running until end of game 5" />
+    <MESSAGE value="05052023 2142&#10;fixed placement of count&#10;fixed update to boat array &#10;&#10;running until end of game 6!!" />
+    <option name="LAST_COMMIT_MESSAGE" value="05052023 2142&#10;fixed placement of count&#10;fixed update to boat array &#10;&#10;running until end of game 6!!" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
