@@ -525,11 +525,11 @@ public class Main {
             System.out.print(" ");
         }
         // printing col numbers, without the last one (because of space after number)
-        for (int i = 0; i < ROWS - 1; i++) {
+        for (int i = 0; i < COLS -1; i++) {
             System.out.print(i +" ");
         }
         // printing the last col number, and ln
-        System.out.println(ROWS - 1);
+        System.out.println(COLS - 1);
 
         // print column numbers
         //System.out.print("  ");
@@ -551,8 +551,8 @@ public class Main {
             }
         System.out.print(i + " ");
         for (int j = 0; j < COLS; j++) {
-                    System.out.print(gameBoard[i][j] + " ");
-                }
+            System.out.print(gameBoard[i][j] + " ");
+            }
         System.out.println();
         }
             // print board
