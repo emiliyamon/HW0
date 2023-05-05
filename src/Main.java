@@ -525,7 +525,7 @@ public class Main {
             System.out.print(" ");
         }
         // printing col numbers, without the last one (because of space after number)
-        for (int i = 0; i < COLS -1; i++) {
+        for (int i = 0; i < COLS - 1; i++) {
             System.out.print(i +" ");
         }
         // printing the last col number, and ln
