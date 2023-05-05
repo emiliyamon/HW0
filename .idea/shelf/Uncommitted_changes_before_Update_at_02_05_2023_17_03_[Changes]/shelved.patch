@@ -1,0 +1,61 @@
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"96a1b52d-5ab1-4ab7-9b35-bedbdb835a61\" name=\"Changes\" comment=\"02052023 1215\">\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/Main.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/Main.java\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"FileTemplateManagerImpl\">\r\n    <option name=\"RECENT_TEMPLATES\">\r\n      <list>\r\n        <option value=\"Class\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n    <option name=\"SET_USER_NAME_GLOBALLY\" value=\"false\" />\r\n  </component>\r\n  <component name=\"MarkdownSettingsMigration\">\r\n    <option name=\"stateVersion\" value=\"1\" />\r\n  </component>\r\n  <component name=\"ProblemsViewState\">\r\n    <option name=\"selectedTabId\" value=\"CurrentFile\" />\r\n  </component>\r\n  <component name=\"ProjectId\" id=\"2P5nfDrYDX4djELYC2G4DtHnZoD\" />\r\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\" />\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\">{\r\n  &quot;keyToString&quot;: {\r\n    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,\r\n    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,\r\n    &quot;settings.editor.selected.configurable&quot;: &quot;configurable.group.editor&quot;\r\n  }\r\n}</component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"96a1b52d-5ab1-4ab7-9b35-bedbdb835a61\" name=\"Changes\" comment=\"\" />\r\n      <created>1682755914723</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1682755914723</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00001\" summary=\"01052023 1313\">\r\n      <created>1682936076313</created>\r\n      <option name=\"number\" value=\"00001\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1682936076313</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00002\" summary=\"01052023 1313\">\r\n      <created>1682936805326</created>\r\n      <option name=\"number\" value=\"00002\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00002\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1682936805326</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00003\" summary=\"01052023 1329\">\r\n      <created>1682936948058</created>\r\n      <option name=\"number\" value=\"00003\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00003\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1682936948058</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00004\" summary=\"01052023 1330\">\r\n      <created>1682937010708</created>\r\n      <option name=\"number\" value=\"00004\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00004\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1682937010708</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00005\" summary=\"01052023 1407\">\r\n      <created>1682939274461</created>\r\n      <option name=\"number\" value=\"00005\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00005\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1682939274461</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00006\" summary=\"01052023 1438\">\r\n      <created>1682941104747</created>\r\n      <option name=\"number\" value=\"00006\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00006\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1682941104747</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00007\" summary=\"01052023 1438\">\r\n      <created>1682945906638</created>\r\n      <option name=\"number\" value=\"00007\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00007\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1682945906638</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00008\" summary=\"01052023 1848&#10;changed the gameboard to char[][]\">\r\n      <created>1682956133530</created>\r\n      <option name=\"number\" value=\"00008\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00008\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1682956133530</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00009\" summary=\"01052023 1952\">\r\n      <created>1682959947038</created>\r\n      <option name=\"number\" value=\"00009\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00009\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1682959947038</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00010\" summary=\"01052023 2045\">\r\n      <created>1682963163314</created>\r\n      <option name=\"number\" value=\"00010\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00010\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1682963163314</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00011\" summary=\"01052023 2021\">\r\n      <created>1682964121885</created>\r\n      <option name=\"number\" value=\"00011\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00011\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1682964121885</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00012\" summary=\"01052023 2110&#10;finished filling the player's board\">\r\n      <created>1682964649282</created>\r\n      <option name=\"number\" value=\"00012\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00012\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1682964649282</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00013\" summary=\"02052023 1215\">\r\n      <created>1683018971715</created>\r\n      <option name=\"number\" value=\"00013\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00013\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1683018971715</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00014\" summary=\"1309\">\r\n      <created>1683022203576</created>\r\n      <option name=\"number\" value=\"00014\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00014\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1683022203576</updated>\r\n    </task>\r\n    <option name=\"localTasksCounter\" value=\"15\" />\r\n    <servers />\r\n  </component>\r\n  <component name=\"Vcs.Log.Tabs.Properties\">\r\n    <option name=\"TAB_STATES\">\r\n      <map>\r\n        <entry key=\"MAIN\">\r\n          <value>\r\n            <State />\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n  </component>\r\n  <component name=\"VcsManagerConfiguration\">\r\n    <MESSAGE value=\"01052023 1313\" />\r\n    <MESSAGE value=\"01052023 1329\" />\r\n    <MESSAGE value=\"01052023 1330\" />\r\n    <MESSAGE value=\"01052023 1407\" />\r\n    <MESSAGE value=\"01052023 1438\" />\r\n    <MESSAGE value=\"01052023 1848&#10;changed the gameboard to char[][]\" />\r\n    <MESSAGE value=\"01052023 1952\" />\r\n    <MESSAGE value=\"01052023 2045\" />\r\n    <MESSAGE value=\"01052023 2021\" />\r\n    <MESSAGE value=\"01052023 2110&#10;finished filling the player's board\" />\r\n    <MESSAGE value=\"02052023 1215\" />\r\n    <MESSAGE value=\"1309\" />\r\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"1309\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision 0fff7fb701edb2fdb6c691e1cf5783d5a4c88653)
++++ b/.idea/workspace.xml	(date 1683035262561)
+@@ -4,7 +4,7 @@
+     <option name="autoReloadType" value="SELECTIVE" />
+   </component>
+   <component name="ChangeListManager">
+-    <list default="true" id="96a1b52d-5ab1-4ab7-9b35-bedbdb835a61" name="Changes" comment="02052023 1215">
++    <list default="true" id="96a1b52d-5ab1-4ab7-9b35-bedbdb835a61" name="Changes" comment="02052023 1642&#10;fixes in filling board section">
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+     </list>
+@@ -150,7 +150,28 @@
+       <option name="project" value="LOCAL" />
+       <updated>1683022203576</updated>
+     </task>
+-    <option name="localTasksCounter" value="15" />
++    <task id="LOCAL-00015" summary="02052023 1555&#10;fixes in player attack turn section">
++      <created>1683032145755</created>
++      <option name="number" value="00015" />
++      <option name="presentableId" value="LOCAL-00015" />
++      <option name="project" value="LOCAL" />
++      <updated>1683032145755</updated>
++    </task>
++    <task id="LOCAL-00016" summary="02052023 1606&#10;fixes in player attack turn section">
++      <created>1683032794778</created>
++      <option name="number" value="00016" />
++      <option name="presentableId" value="LOCAL-00016" />
++      <option name="project" value="LOCAL" />
++      <updated>1683032794778</updated>
++    </task>
++    <task id="LOCAL-00017" summary="02052023 1642&#10;fixes in filling board section">
++      <created>1683034977828</created>
++      <option name="number" value="00017" />
++      <option name="presentableId" value="LOCAL-00017" />
++      <option name="project" value="LOCAL" />
++      <updated>1683034977828</updated>
++    </task>
++    <option name="localTasksCounter" value="18" />
+     <servers />
+   </component>
+   <component name="Vcs.Log.Tabs.Properties">
+@@ -177,6 +198,9 @@
+     <MESSAGE value="01052023 2110&#10;finished filling the player's board" />
+     <MESSAGE value="02052023 1215" />
+     <MESSAGE value="1309" />
+-    <option name="LAST_COMMIT_MESSAGE" value="1309" />
++    <MESSAGE value="02052023 1555&#10;fixes in player attack turn section" />
++    <MESSAGE value="02052023 1606&#10;fixes in player attack turn section" />
++    <MESSAGE value="02052023 1642&#10;fixes in filling board section" />
++    <option name="LAST_COMMIT_MESSAGE" value="02052023 1642&#10;fixes in filling board section" />
+   </component>
+ </project>
+\ No newline at end of file
