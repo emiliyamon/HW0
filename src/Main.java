@@ -537,9 +537,10 @@ public class Main {
                 System.out.print(" ");
             }
             System.out.print(i + " ");
-            for (int j = 0; j < COLS; j++) {
+            for (int j = 0; j < COLS - 1; j++) {
                     System.out.print(gameBoard[i][j] + " ");
                 }
+            System.out.print(gameBoard[i][COLS-1]);
             System.out.println();
         }
 
