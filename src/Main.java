@@ -477,7 +477,6 @@ public class Main {
 
     /**
      * function for keeping track of battleships
-     *
      * @param boatBoard   - relevant boat board
      * @param X           - x coordinate
      * @param Y           - y coordinate
@@ -525,7 +524,7 @@ public class Main {
             System.out.print(" ");
         }
         // printing col numbers, without the last one (because of space after number)
-        for (int i = 0; i < COLS -1; i++) {
+        for (int i = 0; i < COLS - 1; i++) {
             System.out.print(i +" ");
         }
         // printing the last col number, and ln
@@ -551,8 +550,8 @@ public class Main {
             }
         System.out.print(i + " ");
         for (int j = 0; j < COLS; j++) {
-            System.out.print(gameBoard[i][j] + " ");
-            }
+                    System.out.print(gameBoard[i][j] + " ");
+                }
         System.out.println();
         }
             // print board
