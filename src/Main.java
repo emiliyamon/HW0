@@ -1,5 +1,6 @@
 import java.io.File;
 import java.io.IOException;
+import java.util.Arrays;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -75,13 +76,13 @@ public class Main {
 
         int X, Y, ORIENTATION, S, AMOUNT;
         int[] locationOrientationArray = new int[3]; //למה זה מושחר? אולי כי בשורה 94 אנחנו מקבלים מערך של אינטים מהפונק' המרה שלנו, אז לא צריך להגדיר פה מערך אינטים חדש?
+        count = 1;
 
         // filling player game board
         for (i = 0; i < battleshipArray.length; i++) {
 
             S = battleshipArray[i][1];
             AMOUNT = battleshipArray[i][0];
-            count = 1;
 
             System.out.println("Enter location and orientation for battleship of size " + S);
             input = scanner.nextLine();
@@ -144,7 +145,9 @@ public class Main {
                 }
 
                 fillGameBoard(playerGameBoard, X, Y, ORIENTATION, S);
-                fillBoatBoard(playerBoatBoard, X, Y, ORIENTATION, S, playerBoatArray, count);
+                fillBoatBoard(playerBoatBoard, X, Y, ORIENTATION, S, count);
+
+                playerBoatArray[count - 1] = S; // in the array the number of the boat is the index-1 and the value is its length
 
                 System.out.println("Your current game board:");
                 printGameBoard(playerGameBoard);
@@ -156,13 +159,13 @@ public class Main {
 
 
         // filling computer game board
+        count = 1;
         for (i = 0; i < battleshipArray.length; i++) {
             X = rnd.nextInt(ROWS);
             Y = rnd.nextInt(COLS);
             ORIENTATION = rnd.nextInt(2);
             S = battleshipArray[i][1];
             AMOUNT = battleshipArray[i][0];
-            count = 1;
 
 
             // orientation 0 for horizontal, 1 for vertical
@@ -206,7 +209,10 @@ public class Main {
                 }
 
                 fillGameBoard(computerGameBoard, X, Y, ORIENTATION, S);
-                fillBoatBoard(computerBoatBoard, X, Y, ORIENTATION, S, computerBoatArray, count);
+                fillBoatBoard(computerBoatBoard, X, Y, ORIENTATION, S, count);
+
+                computerBoatArray[count - 1] = S; // in the array the number of the boat is the index-1 and the value is its length
+
                 AMOUNT--;
                 count++;
             }
@@ -310,6 +316,7 @@ public class Main {
                         rPlayer = (rPlayer - 1);
                         System.out.println("Your battleship has been drowned, you have left " + rPlayer + " more battleships!");
                         playerBoatArray[i] = -1;
+
                     }
                 }
                 if (rPlayer == 0) {
@@ -336,7 +343,6 @@ public class Main {
         // end of main battleship game
     }
 
-    //זה דוקומינטציה תקינה מה שקורה מתחתיי?
 
     /**
      * Function for conversion of string to int array
@@ -480,15 +486,15 @@ public class Main {
 
     /**
      * function for keeping track of battleships
+     *
      * @param boatBoard   - relevant boat board
      * @param X           - x coordinate
      * @param Y           - y coordinate
      * @param ORIENTATION - orientation 0 or 1
      * @param S           - size of boat
-     * @param boatArray   - array of all boats of the player
      * @param count       - number of boat
      */
-    public static void fillBoatBoard(int[][] boatBoard, int X, int Y, int ORIENTATION, int S, int[] boatArray, int count) {
+    public static void fillBoatBoard(int[][] boatBoard, int X, int Y, int ORIENTATION, int S, int count) {
         int boatLocationMarker = count; // count represents number of boat on the board
         switch (ORIENTATION) {
             case 0:
@@ -502,20 +508,20 @@ public class Main {
                 }
                 break;
         }
-        boatArray[count - 1] = S; // in the array the number of the boat is the index-1 and the value is its length
     }
 
 
     /**
      * function for printing the game board
+     *
      * @param gameBoard - the relevant game board to print
      */
     public static void printGameBoard(char[][] gameBoard) {
         int ROWS = gameBoard.length; //num of rows in game board. exp: 11X11 -> ROWS = 11
         int COLS = gameBoard[0].length;//num of columns in game board
 
-        String numLastRow = Integer.toString(ROWS - 1); //"10" הפכתי לסטרינג כדי לאתחל משנה של אורך המספר
-        int len = numLastRow.length(); //2אורך מספר השורה האחרונה
+        String numLastRow = Integer.toString(ROWS - 1); // length digit
+        int len = numLastRow.length(); // length of last ROW digit
 
         //printing the spaces before col numbers
         for (int i = 0; i < len + 1; i++) {
@@ -532,7 +538,7 @@ public class Main {
             String new_i = Integer.toString(i); //to check the length of row number
             int len_i = new_i.length();
             int counter = checkingSpaces(ROWS); //got the number of digits of last row number
-            int space = counter - len_i; //spaces = ההפרש
+            int space = counter - len_i; // number of spaces
             for (int k = 0; k < space; k++) {
                 System.out.print(" ");
             }
@@ -550,6 +556,7 @@ public class Main {
 
     /**
      * function for checking spaces
+     *
      * @param ROWS - number of rows
      * @return - returns length of the longest digit
      */
