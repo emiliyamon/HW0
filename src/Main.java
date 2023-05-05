@@ -39,7 +39,7 @@ public class Main {
         int[][] computerBoatBoard = new int[ROWS][COLS];
         buildBoatBoard(computerBoatBoard);
 
-        System.out.println("Enter the battleship sizes");
+        System.out.println("Enter the battleships sizes");
         String battleshipSizes = scanner.nextLine();
         // "n1Xs1...nkXsk"
 
@@ -327,6 +327,9 @@ public class Main {
         if (rComputer == 0) {
             System.out.println("You won the game!");
         } else {
+            System.out.println("Your current game board:");
+            printGameBoard(playerGameBoard);
+
             System.out.println("You lost ):");
         }
 
@@ -533,11 +536,11 @@ public class Main {
             for (int k = 0; k < space; k++) {
                 System.out.print(" ");
             }
-        System.out.print(i + " ");
-        for (int j = 0; j < COLS; j++) {
+            System.out.print(i + " ");
+            for (int j = 0; j < COLS; j++) {
                     System.out.print(gameBoard[i][j] + " ");
                 }
-        System.out.println();
+            System.out.println();
         }
 
         System.out.println();
