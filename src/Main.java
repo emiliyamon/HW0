@@ -74,7 +74,7 @@ public class Main {
         printGameBoard(playerGameBoard);
 
         int X, Y,ORIENTATION, S, AMOUNT;
-        int[] locationOrientationArray = new int[3]; //למה זה מושחר? אולי כי בשורה 82 אנחנו מקבלים מערך של אינטים מהפונק' המרה שלנו, אז לא צריך להגדיר פה מערך אינטים חדש?
+        int[] locationOrientationArray = new int[3]; //למה זה מושחר? אולי כי בשורה 94 אנחנו מקבלים מערך של אינטים מהפונק' המרה שלנו, אז לא צריך להגדיר פה מערך אינטים חדש?
 
         // filling player game board
         for (i = 0; i < battleshipArray.length; i++) {
@@ -111,7 +111,7 @@ public class Main {
                     input = scanner.nextLine();
                     locationOrientationArray = stringToIntArray(input, regex);
                     continue;
-                } else if (X >= ROWS || Y >= COLS) {
+                } else if (X >= ROWS || Y >= COLS) { //מאחר ומדובר במשבצת ההתחלה של הספינה, זה כן יהיה תקין במקרה שאורך הספינה הוא 1
                     System.out.println("Illegal tile, try again!");
                     input = scanner.nextLine();
                     locationOrientationArray = stringToIntArray(input, regex);
@@ -128,8 +128,8 @@ public class Main {
                     continue;
                 }
 
-                overlapTestResult = overlapTest(X, Y, ORIENTATION, S, playerGameBoard);
-                adjacentTestResult = adjacentTest(X, Y, ORIENTATION, S, playerGameBoard);
+                overlapTestResult = overlapTest(X, Y, ORIENTATION, S, playerGameBoard); //checking if there's already ship there
+                adjacentTestResult = adjacentTest(X, Y, ORIENTATION, S, playerGameBoard); //checking if all around is clear
 
                 if (overlapTestResult) {
                     System.out.println("Battleship overlaps another battleship, try again!");
@@ -333,7 +333,7 @@ public class Main {
         // end of main battleship game
     }
 
-
+    //זה דוקומינטציה תקינה מה שקורה מתחתיי?
     /**
      * Function for conversion of string to int array
      * @param input - string input from the user
