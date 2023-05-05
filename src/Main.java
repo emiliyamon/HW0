@@ -78,6 +78,7 @@ public class Main {
         int[] locationOrientationArray = new int[3]; //למה זה מושחר? אולי כי בשורה 94 אנחנו מקבלים מערך של אינטים מהפונק' המרה שלנו, אז לא צריך להגדיר פה מערך אינטים חדש?
         count = 1;
 
+
         // filling player game board
         for (i = 0; i < battleshipArray.length; i++) {
 
