@@ -39,7 +39,7 @@ public class Main {
         int[][] computerBoatBoard = new int[ROWS][COLS];
         buildBoatBoard(computerBoatBoard);
 
-        System.out.println("Enter battleship sizes");
+        System.out.println("Enter the battleship sizes");
         String battleshipSizes = scanner.nextLine();
         // "n1Xs1...nkXsk"
 
@@ -111,7 +111,7 @@ public class Main {
                     input = scanner.nextLine();
                     locationOrientationArray = stringToIntArray(input, regex);
                     continue;
-                } else if (X >= ROWS || Y >= COLS) { //מאחר ומדובר במשבצת ההתחלה של הספינה, זה כן יהיה תקין במקרה שאורך הספינה הוא 1
+                } else if (X >= ROWS || Y >= COLS) {
                     System.out.println("Illegal tile, try again!");
                     input = scanner.nextLine();
                     locationOrientationArray = stringToIntArray(input, regex);
@@ -290,7 +290,7 @@ public class Main {
                     Y = rnd.nextInt(COLS);
                 } else {
                     flag = false;
-                    System.out.println("The computer attacked (" + X + "," + Y + ")");
+                    System.out.println("The computer attacked (" + X + ", " + Y + ")");
                 }
             }
 
@@ -547,7 +547,7 @@ public class Main {
     /**
      * function for checking spaces
      * @param ROWS - number of rows
-     * @return - length of longest digits
+     * @return - returns length of the longest digit
      */
     public static int checkingSpaces(int ROWS) {
         ROWS -= 1;
