@@ -511,12 +511,7 @@ public class Main {
         int ROWS = gameBoard.length; //num of rows in game board. exp: 11X11 -> ROWS = 11
         int COLS = gameBoard[0].length;//num of columns in game board
 
-        // calculate number of digits in maximum row/col number
-        //int rowDigits = Integer.toString(ROWS - 1).length();
-        //int colDigits = Integer.toString(COLS - 1).length();
-
         String numLastRow = Integer.toString(ROWS - 1); //"10" הפכתי לסטרינג כדי לאתחל משנה של אורך המספר
-        //int numLastCol = COLS - 1;
         int len = numLastRow.length(); //2אורך מספר השורה האחרונה
 
         //printing the spaces before col numbers
@@ -530,16 +525,6 @@ public class Main {
         // printing the last col number, and ln
         System.out.println(COLS - 1);
 
-        //print column numbers
-        //System.out.print("  ");
-        //for (int j = 0; j < COLS; j++) {
-        // calculate number of spaces before col number
-        //int numSpaces = colDigits - Integer.toString(j).length() + 2;
-        //String spaces = new String(new char[numSpaces]).replace("\0", " ");
-
-        //System.out.print(spaces + j);
-        //}
-        //System.out.println();
         for (int i = 0; i < ROWS; i++) {
             String new_i = Integer.toString(i); //to check the length of row number
             int len_i = new_i.length();
@@ -554,20 +539,10 @@ public class Main {
                 }
         System.out.println();
         }
-            // print board
-            //for (int i = 0; i < ROWS; i++) {
-            // calculate number of spaces before row number
-            //int numSpaces = rowDigits - Integer.toString(i).length() + 2;
-            //String spaces = new String(new char[numSpaces]).replace("\0", " ");
 
-            // print row number
-            //System.out.print(spaces + i);
-
-            //for (int j = 0; j < COLS; j++) {
-            //System.out.print(spaces + gameBoard[i][j]);
-            //}
         System.out.println();
         }
+
 
     /**
      * function for checking spaces

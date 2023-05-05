@@ -4,8 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="96a1b52d-5ab1-4ab7-9b35-bedbdb835a61" name="Changes" comment="04052023 1627&#10;fixed conditions to give a solution to negative input&#10;&#10;running until end of game 5">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="96a1b52d-5ab1-4ab7-9b35-bedbdb835a61" name="Changes" comment="05052023 1743&#10;changed to shaked&#10;&#10;running until end of game 5">
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -265,7 +264,14 @@
       <option name="project" value="LOCAL" />
       <updated>1683206920872</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="05052023 1743&#10;changed to shaked&#10;&#10;running until end of game 5">
+      <created>1683299414098</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1683299414098</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -280,7 +286,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="01052023 1330" />
     <MESSAGE value="01052023 1407" />
     <MESSAGE value="01052023 1438" />
     <MESSAGE value="01052023 1848&#10;changed the gameboard to char[][]" />
@@ -305,7 +310,8 @@
     <MESSAGE value="04052023 1559&#10;filling boats on board conditions" />
     <MESSAGE value="04052023 1617&#10;fixed all switch-case with breaks" />
     <MESSAGE value="04052023 1627&#10;fixed conditions to give a solution to negative input&#10;&#10;running until end of game 5" />
-    <option name="LAST_COMMIT_MESSAGE" value="04052023 1627&#10;fixed conditions to give a solution to negative input&#10;&#10;running until end of game 5" />
+    <MESSAGE value="05052023 1743&#10;changed to shaked&#10;&#10;running until end of game 5" />
+    <option name="LAST_COMMIT_MESSAGE" value="05052023 1743&#10;changed to shaked&#10;&#10;running until end of game 5" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
