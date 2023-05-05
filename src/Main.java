@@ -506,10 +506,8 @@ public class Main {
 
     /**
      * function for printing the game board
-     *
      * @param gameBoard - the relevant game board to print
      */
-
     public static void printGameBoard(char[][] gameBoard) {
         int ROWS = gameBoard.length; //num of rows in game board. exp: 11X11 -> ROWS = 11
         int COLS = gameBoard[0].length;//num of columns in game board
@@ -572,6 +570,11 @@ public class Main {
         System.out.println();
         }
 
+    /**
+     * function for checking spaces
+     * @param ROWS - number of rows
+     * @return - length of longest digits
+     */
     public static int checkingSpaces(int ROWS) {
         ROWS -= 1;
         int counter = 0;
@@ -584,7 +587,7 @@ public class Main {
 
 
 
-
+ // end of functions
 
 
     public static void main(String[] args) throws IOException {

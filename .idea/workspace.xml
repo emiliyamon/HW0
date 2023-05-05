@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="96a1b52d-5ab1-4ab7-9b35-bedbdb835a61" name="Changes" comment="מיושר!" />
+    <list default="true" id="96a1b52d-5ab1-4ab7-9b35-bedbdb835a61" name="Changes" comment="04052023 1627&#10;fixed conditions to give a solution to negative input&#10;&#10;running until end of game 5">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -220,21 +223,49 @@
       <option name="project" value="LOCAL" />
       <updated>1683135541807</updated>
     </task>
-    <task id="LOCAL-00024" summary="friday">
-      <created>1683272294567</created>
+    <task id="LOCAL-00024" summary="04052023 1405&#10;fixes in the attacking section - making it into a do-while loop">
+      <created>1683198324153</created>
       <option name="number" value="00024" />
       <option name="presentableId" value="LOCAL-00024" />
       <option name="project" value="LOCAL" />
-      <updated>1683272294567</updated>
+      <updated>1683198324153</updated>
     </task>
-    <task id="LOCAL-00025" summary="מיושר!">
-      <created>1683293214698</created>
+    <task id="LOCAL-00025" summary="04052023 1505&#10;the pointers are conspiring against us&#10;&#10;made changes in boat building way">
+      <created>1683201981847</created>
       <option name="number" value="00025" />
       <option name="presentableId" value="LOCAL-00025" />
       <option name="project" value="LOCAL" />
-      <updated>1683293214698</updated>
+      <updated>1683201981847</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="04052023 1518&#10;more fixes in the gameplay-&#10;now game is working okay for games 1,2 and breaks at the 3rd">
+      <created>1683202761344</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1683202761344</updated>
+    </task>
+    <task id="LOCAL-00027" summary="04052023 1559&#10;filling boats on board conditions">
+      <created>1683205160789</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1683205160789</updated>
+    </task>
+    <task id="LOCAL-00028" summary="04052023 1617&#10;fixed all switch-case with breaks">
+      <created>1683206253739</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1683206253739</updated>
+    </task>
+    <task id="LOCAL-00029" summary="04052023 1627&#10;fixed conditions to give a solution to negative input&#10;&#10;running until end of game 5">
+      <created>1683206920872</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1683206920872</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -249,8 +280,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="01052023 1313" />
-    <MESSAGE value="01052023 1329" />
     <MESSAGE value="01052023 1330" />
     <MESSAGE value="01052023 1407" />
     <MESSAGE value="01052023 1438" />
@@ -270,9 +299,13 @@
     <MESSAGE value="03052023 1254&#10;fixing error messages&#10;version 0.5 completed" />
     <MESSAGE value="03052023 1343&#10;path to testim added&#10;version 0.5 completed" />
     <MESSAGE value="03052023 2038&#10;changed ranges in conditions" />
-    <MESSAGE value="friday" />
-    <MESSAGE value="מיושר!" />
-    <option name="LAST_COMMIT_MESSAGE" value="מיושר!" />
+    <MESSAGE value="04052023 1405&#10;fixes in the attacking section - making it into a do-while loop" />
+    <MESSAGE value="04052023 1505&#10;the pointers are conspiring against us&#10;&#10;made changes in boat building way" />
+    <MESSAGE value="04052023 1518&#10;more fixes in the gameplay-&#10;now game is working okay for games 1,2 and breaks at the 3rd" />
+    <MESSAGE value="04052023 1559&#10;filling boats on board conditions" />
+    <MESSAGE value="04052023 1617&#10;fixed all switch-case with breaks" />
+    <MESSAGE value="04052023 1627&#10;fixed conditions to give a solution to negative input&#10;&#10;running until end of game 5" />
+    <option name="LAST_COMMIT_MESSAGE" value="04052023 1627&#10;fixed conditions to give a solution to negative input&#10;&#10;running until end of game 5" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
