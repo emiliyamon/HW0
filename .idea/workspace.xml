@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="96a1b52d-5ab1-4ab7-9b35-bedbdb835a61" name="Changes" comment="06052023 1348&#10; fixed section of filling player game board&#10;&#10;running until end of game 6!!">
+    <list default="true" id="96a1b52d-5ab1-4ab7-9b35-bedbdb835a61" name="Changes" comment="06052023 1348&#10; fixed section of filling computer game board&#10;&#10;running correctly until end of game 6.&#10;&#10;final version do not change!!!">
+      <change afterPath="$PROJECT_DIR$/HW0_321771859_207747361.zip" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/outputcheck.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -341,7 +344,14 @@
       <option name="project" value="LOCAL" />
       <updated>1683370092576</updated>
     </task>
-    <option name="localTasksCounter" value="41" />
+    <task id="LOCAL-00041" summary="06052023 1348&#10; fixed section of filling computer game board&#10;&#10;running correctly until end of game 6.&#10;&#10;final version do not change!!!">
+      <created>1683370505081</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1683370505081</updated>
+    </task>
+    <option name="localTasksCounter" value="42" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -356,7 +366,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="DIKAON" />
     <MESSAGE value="02052023 17011&#10;commit a '#'" />
     <MESSAGE value="02052023 1811&#10;adding functions for keeping track of boats" />
     <MESSAGE value="02052023 1837&#10;adding functions for keeping track of boats" />
@@ -381,7 +390,8 @@
     <MESSAGE value="05052023 2220&#10;trying to fix printing mistake&#10;&#10;running until end of game 6!!" />
     <MESSAGE value="05052023 2225&#10; mistake in printing:&#10; sometimes prints &quot;overlap&quot; instead of &quot;enter loc...&quot;&#10;&#10;running until end of game 6!!" />
     <MESSAGE value="06052023 1348&#10; fixed section of filling player game board&#10;&#10;running until end of game 6!!" />
-    <option name="LAST_COMMIT_MESSAGE" value="06052023 1348&#10; fixed section of filling player game board&#10;&#10;running until end of game 6!!" />
+    <MESSAGE value="06052023 1348&#10; fixed section of filling computer game board&#10;&#10;running correctly until end of game 6.&#10;&#10;final version do not change!!!" />
+    <option name="LAST_COMMIT_MESSAGE" value="06052023 1348&#10; fixed section of filling computer game board&#10;&#10;running correctly until end of game 6.&#10;&#10;final version do not change!!!" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

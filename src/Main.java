@@ -1,6 +1,5 @@
 import java.io.File;
 import java.io.IOException;
-import java.util.Arrays;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -447,8 +446,8 @@ public class Main {
         char boatLocation = '#';
         switch (ORIENTATION) {
             case 0:
-                for (int i = Math.max(0, X - 1); i <= Math.min(playerGameBoard.length - 1, X + 1); i++) {
-                    for (int j = Math.max(0, Y - 1); j <= Math.min(playerGameBoard[0].length - 1, Y + S); j++) {
+                for (int i = max(0, X - 1); i <= min(playerGameBoard.length - 1, X + 1); i++) {
+                    for (int j = max(0, Y - 1); j <= min(playerGameBoard[0].length - 1, Y + S); j++) {
                         if (playerGameBoard[i][j] == boatLocation) {
                             return true;
                         }
@@ -456,8 +455,8 @@ public class Main {
                 }
                 break;
             case 1:
-                for (int i = Math.max(0, X - 1); i <= Math.min(playerGameBoard.length - 1, X + S); i++) {
-                    for (int j = Math.max(0, Y - 1); j <= Math.min(playerGameBoard[0].length - 1, Y + 1); j++) {
+                for (int i = max(0, X - 1); i <= min(playerGameBoard.length - 1, X + S); i++) {
+                    for (int j = max(0, Y - 1); j <= min(playerGameBoard[0].length - 1, Y + 1); j++) {
                         if (playerGameBoard[i][j] == boatLocation) {
                             return true;
                         }
@@ -579,6 +578,36 @@ public class Main {
             ROWS /= 10;
         }
         return counter + 1;
+    }
+
+
+    /**
+     * checking max number between ints
+     * @param a - int to compare
+     * @param b - int to compare
+     * @return - largest int
+     */
+    public static int max(int a, int b) {
+        if (a > b) {
+            return a;
+        } else {
+            return b;
+        }
+    }
+
+
+    /**
+     * checking min number between ints
+     * @param a - int to compare
+     * @param b - int to compare
+     * @return - smallest int
+     */
+    public static int min(int a, int b) {
+        if (a < b) {
+            return a;
+        } else {
+            return b;
+        }
     }
 
 
