@@ -168,51 +168,55 @@ public class Main {
         // filling computer game board
         count = 1;
         for (i = 0; i < battleshipArray.length; i++) {
-            X = rnd.nextInt(ROWS);
-            Y = rnd.nextInt(COLS);
-            ORIENTATION = rnd.nextInt(2);
             S = battleshipArray[i][1];
             AMOUNT = battleshipArray[i][0];
-
 
             // orientation 0 for horizontal, 1 for vertical
             // horizontal size s from (x,y) to (x, y+s-1)
             // vertical size s from (x,y) to (x+s-1, y)
 
             while (AMOUNT > 0) {
-                boolean overlapTestResult = false;
-                boolean adjacentTestResult = false;
+                X = rnd.nextInt(ROWS);
+                Y = rnd.nextInt(COLS);
+                ORIENTATION = rnd.nextInt(2);
 
-                if (X >= ROWS || Y >= COLS) {
-                    X = rnd.nextInt(ROWS);
-                    Y = rnd.nextInt(COLS);
-                    ORIENTATION = rnd.nextInt(2);
-                    continue;
-                } else if (ORIENTATION == 0 && (Y + S - 1) >= COLS) {
-                    X = rnd.nextInt(ROWS);
-                    Y = rnd.nextInt(COLS);
-                    ORIENTATION = rnd.nextInt(2);
-                    continue;
-                } else if (ORIENTATION == 1 && (X + S - 1) >= ROWS) {
-                    X = rnd.nextInt(ROWS);
-                    Y = rnd.nextInt(COLS);
-                    ORIENTATION = rnd.nextInt(2);
-                    continue;
-                }
+                notValidLocation = true;
+                while (notValidLocation) {
+                    boolean overlapTestResult = false;
+                    boolean adjacentTestResult = false;
 
-                overlapTestResult = overlapTest(X, Y, ORIENTATION, S, computerGameBoard);
-                adjacentTestResult = adjacentTest(X, Y, ORIENTATION, S, computerGameBoard);
+                    if (X >= ROWS || Y >= COLS) {
+                        X = rnd.nextInt(ROWS);
+                        Y = rnd.nextInt(COLS);
+                        ORIENTATION = rnd.nextInt(2);
+                        continue;
+                    } else if (ORIENTATION == 0 && (Y + S - 1) >= COLS) {
+                        X = rnd.nextInt(ROWS);
+                        Y = rnd.nextInt(COLS);
+                        ORIENTATION = rnd.nextInt(2);
+                        continue;
+                    } else if (ORIENTATION == 1 && (X + S - 1) >= ROWS) {
+                        X = rnd.nextInt(ROWS);
+                        Y = rnd.nextInt(COLS);
+                        ORIENTATION = rnd.nextInt(2);
+                        continue;
+                    }
 
-                if (overlapTestResult) {
-                    X = rnd.nextInt(ROWS);
-                    Y = rnd.nextInt(COLS);
-                    ORIENTATION = rnd.nextInt(2);
-                    continue;
-                } else if (adjacentTestResult) {
-                    X = rnd.nextInt(ROWS);
-                    Y = rnd.nextInt(COLS);
-                    ORIENTATION = rnd.nextInt(2);
-                    continue;
+                    overlapTestResult = overlapTest(X, Y, ORIENTATION, S, computerGameBoard);
+                    adjacentTestResult = adjacentTest(X, Y, ORIENTATION, S, computerGameBoard);
+
+                    if (overlapTestResult) {
+                        X = rnd.nextInt(ROWS);
+                        Y = rnd.nextInt(COLS);
+                        ORIENTATION = rnd.nextInt(2);
+                        continue;
+                    } else if (adjacentTestResult) {
+                        X = rnd.nextInt(ROWS);
+                        Y = rnd.nextInt(COLS);
+                        ORIENTATION = rnd.nextInt(2);
+                        continue;
+                    }
+                    notValidLocation = false;
                 }
 
                 fillGameBoard(computerGameBoard, X, Y, ORIENTATION, S);
